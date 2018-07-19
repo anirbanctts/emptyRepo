@@ -1,0 +1,11 @@
+{
+  "summary": {
+    "title": "SampleThreatModel1",
+    "owner": "Anirban Biswas",
+    "description": "Testing threat model creation"
+  },
+  "detail": {
+    "contributors": [],
+    "diagrams": []
+  }
+}
