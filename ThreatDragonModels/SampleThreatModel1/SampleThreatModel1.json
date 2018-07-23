@@ -33,7 +33,10 @@
                   "severity": "Medium",
                   "title": "sample threat title",
                   "type": "Repudiation",
-                  "subtype": "zzzz",
+                  "subtype": {
+                    "name": "Bravo",
+                    "id": 27
+                  },
                   "description": "sample desc",
                   "mitigation": "sample mitigation"
                 }
