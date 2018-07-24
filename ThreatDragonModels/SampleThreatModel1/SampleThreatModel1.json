@@ -33,7 +33,7 @@
                   "severity": "Medium",
                   "title": "sample threat title1",
                   "type": "Automated Threat",
-                  "subtype": "OAT-002 Token Cracking",
+                  "subtype": "aaaa",
                   "description": "sample desc",
                   "mitigation": "sample mitigation"
                 }
