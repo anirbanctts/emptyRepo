@@ -33,10 +33,7 @@
                   "severity": "Medium",
                   "title": "sample threat title",
                   "type": "Automated Threat",
-                  "subtype": {
-                    "name": "Bravo",
-                    "id": 27
-                  },
+                  "subtype": "OAT-002 Token Cracking",
                   "description": "sample desc",
                   "mitigation": "sample mitigation"
                 }
