@@ -31,7 +31,7 @@
                 {
                   "status": "Open",
                   "severity": "Medium",
-                  "title": "sample threat title",
+                  "title": "sample threat title1",
                   "type": "Automated Threat",
                   "subtype": "OAT-002 Token Cracking",
                   "description": "sample desc",
