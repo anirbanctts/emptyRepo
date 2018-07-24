@@ -33,7 +33,7 @@
                   "severity": "Medium",
                   "title": "sample threat title1",
                   "type": "Automated Threat",
-                  "subtype": "aaaa",
+                  "subtype": "xyz",
                   "description": "sample desc",
                   "mitigation": "sample mitigation"
                 }
