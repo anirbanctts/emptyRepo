@@ -32,7 +32,7 @@
                   "status": "Open",
                   "severity": "Medium",
                   "title": "sample threat title",
-                  "type": "Resource Depletion",
+                  "type": "Automated Threat",
                   "subtype": {
                     "name": "Bravo",
                     "id": 27
