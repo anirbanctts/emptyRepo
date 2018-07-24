@@ -33,7 +33,7 @@
                   "severity": "Medium",
                   "title": "sample threat title1",
                   "type": "Automated Threat",
-                  "subtype": "xyz",
+                  "subtype": "OAT-001 Carding",
                   "description": "sample desc",
                   "mitigation": "sample mitigation"
                 }
