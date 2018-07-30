@@ -32,8 +32,8 @@
                   "status": "Open",
                   "severity": "Medium",
                   "title": "sample threat title1",
-                  "type": "OWASP Top Ten 2017 Category A1 - Injection",
-                  "subtype": "OAT-001 Carding",
+                  "type": "OWASP Top Ten 2017 Category A2 - Broken Authentication",
+                  "subtype": "256",
                   "description": "sample desc",
                   "mitigation": "sample mitigation"
                 }
