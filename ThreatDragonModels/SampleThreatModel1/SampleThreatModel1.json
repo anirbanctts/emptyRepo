@@ -32,7 +32,7 @@
                   "status": "Open",
                   "severity": "Medium",
                   "title": "sample threat title1",
-                  "type": "Automated Threat",
+                  "type": "OWASP Top Ten 2017 Category A1 - Injection",
                   "subtype": "OAT-001 Carding",
                   "description": "sample desc",
                   "mitigation": "sample mitigation"
