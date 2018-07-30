@@ -31,12 +31,12 @@
                 {
                   "status": "Open",
                   "severity": "Medium",
-                  "title": "sample threat title1",
-                  "type": "OWASP Top Ten 2017 Category A2 - Broken Authentication",
-                  "subtype": "Use of Single-factor Authentication",
+                  "title": "sample threat title",
+                  "type": "OWASP Top Ten 2017 Category A3 - Sensitive Data Exposure",
+                  "subtype": "Cleartext Transmission of Sensitive Information",
                   "description": "sample desc",
                   "mitigation": "sample mitigation",
-                  "subCategorySummary": "The use of single-factor authentication can lead to unnecessary risk of compromise when compared with the benefits of a dual-factor authentication scheme."
+                  "subCategorySummary": "The software transmits sensitive or security-critical data in cleartext in a communication channel that can be sniffed by unauthorized actors."
                 }
               ],
               "attrs": {
