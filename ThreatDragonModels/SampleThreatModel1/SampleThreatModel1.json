@@ -32,11 +32,11 @@
                   "status": "Open",
                   "severity": "Medium",
                   "title": "sample threat title",
-                  "type": "OWASP Top Ten 2017 Category A3 - Sensitive Data Exposure",
-                  "subtype": "Reversible One-Way Hash",
+                  "type": "OWASP Top Ten 2017 Category A2 - Broken Authentication",
+                  "subtype": "Unprotected Storage of Credentials",
                   "description": "sample desc",
                   "mitigation": "sample mitigation",
-                  "subCategorySummary": "The product uses a hashing algorithm that produces a hash value that can be used to determine the original input, or to find an input that can produce the same hash, more efficiently than brute force techniques."
+                  "subCategorySummary": "Storing a password in plaintext may result in a system compromise."
                 }
               ],
               "attrs": {
