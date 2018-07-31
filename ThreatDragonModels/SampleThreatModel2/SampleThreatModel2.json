@@ -1,7 +1,8 @@
 {
   "summary": {
     "title": "SampleThreatModel2",
-    "owner": "Anirban"
+    "owner": "Anirban",
+    "description": "sample desc"
   },
   "detail": {
     "contributors": [],
