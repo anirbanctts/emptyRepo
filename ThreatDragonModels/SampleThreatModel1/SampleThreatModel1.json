@@ -36,7 +36,9 @@
                   "subtype": "Unprotected Storage of Credentials",
                   "description": "sample desc",
                   "mitigation": "sample mitigation",
-                  "subCategorySummary": "Storing a password in plaintext may result in a system compromise."
+                  "subCategorySummary": "Storing a password in plaintext may result in a system compromise.",
+                  "attackPatternType": "Inject Unexpected Items",
+                  "attackPattern": "Resource Injection"
                 }
               ],
               "attrs": {
