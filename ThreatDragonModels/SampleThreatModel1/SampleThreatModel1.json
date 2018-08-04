@@ -37,8 +37,9 @@
                   "description": "sample desc",
                   "mitigation": "sample mitigation",
                   "subCategorySummary": "Storing a password in plaintext may result in a system compromise.",
-                  "attackPatternType": "Inject Unexpected Items",
-                  "attackPattern": "Resource Injection"
+                  "attackPatternType": "Manipulate Timing and State",
+                  "attackPattern": "Leveraging Race Conditions",
+                  "attackPatternSummary": "The adversary targets a race condition occurring when multiple processes access and manipulate the same resource concurrently, and the outcome of the execution depends on the particular order in which the access takes place. The adversary can leverage a race condition by \"running the race\", modifying the resource and modifying the normal execution flow. For instance, a race condition can occur while accessing a file: the adversary can trick the system by replacing the original file with his version and cause the system to read the malicious file."
                 }
               ],
               "attrs": {
