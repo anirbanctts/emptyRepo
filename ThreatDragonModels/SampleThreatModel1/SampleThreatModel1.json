@@ -53,6 +53,21 @@
                   "attackPatternSummary": "The adversary targets a race condition occurring when multiple processes access and manipulate the same resource concurrently, and the outcome of the execution depends on the particular order in which the access takes place. The adversary can leverage a race condition by \"running the race\", modifying the resource and modifying the normal execution flow. For instance, a race condition can occur while accessing a file: the adversary can trick the system by replacing the original file with his version and cause the system to read the malicious file.",
                   "description": "aa",
                   "mitigation": "ss"
+                },
+                {
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "OWASP Top Ten 2017 Category A2 - Broken Authentication",
+                  "title": "ww",
+                  "subtype": "Session Fixation",
+                  "subCategorySummary": "Authenticating a user, or otherwise establishing a new user session, without invalidating any existing session identifier gives an attacker the opportunity to steal authenticated sessions.",
+                  "attackPatternType": "Manipulate Data Structures",
+                  "attackPattern": "Pointer Manipulation",
+                  "attackPatternSummary": [
+                    "This attack pattern involves an adversary manipulating a pointer within a target application resulting in the application accessing an unintended memory location. This can result in the crashing of the application or, for certain pointer values, access to data that would not normally be possible or the execution of arbitrary code. Since pointers are simply integer variables, Integer Attacks may often be used in Pointer Attacks."
+                  ],
+                  "description": "wwq",
+                  "mitigation": ""
                 }
               ],
               "attrs": {
