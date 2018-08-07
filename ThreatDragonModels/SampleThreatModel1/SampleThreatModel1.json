@@ -45,12 +45,14 @@
                   "status": "Open",
                   "severity": "Medium",
                   "title": "Poison messages 2",
-                  "type": "OWASP Top Ten 2017 Category A6 - Security Misconfiguration",
-                  "subtype": "Information Exposure Through Directory Listing",
-                  "subCategorySummary": "A directory listing is inappropriately exposed, yielding potentially sensitive information to attackers.",
-                  "attackPatternType": "Manipulate Timing and State",
-                  "attackPattern": "Leveraging Race Conditions",
-                  "attackPatternSummary": "The adversary targets a race condition occurring when multiple processes access and manipulate the same resource concurrently, and the outcome of the execution depends on the particular order in which the access takes place. The adversary can leverage a race condition by \"running the race\", modifying the resource and modifying the normal execution flow. For instance, a race condition can occur while accessing a file: the adversary can trick the system by replacing the original file with his version and cause the system to read the malicious file.",
+                  "type": "OWASP Top Ten 2017 Category A3 - Sensitive Data Exposure",
+                  "subtype": "Inadequate Encryption Strength",
+                  "subCategorySummary": "The software stores or transmits sensitive data using an encryption scheme that is theoretically sound, but is not strong enough for the level of protection required.",
+                  "attackPatternType": "Employ Probabilistic Techniques",
+                  "attackPattern": "Fuzzing",
+                  "attackPatternSummary": [
+                    "In this attack pattern, the adversary leverages fuzzing to try to identify weaknesses in the system. Fuzzing is a software security and functionality testing method that feeds randomly constructed input to the system and looks for an indication that a failure in response to that input has occurred. Fuzzing treats the system as a black box and is totally free from any preconceptions or assumptions about the system. Fuzzing can help an attacker discover certain assumptions made about user input in the system. Fuzzing gives an attacker a quick way of potentially uncovering some of these assumptions despite not necessarily knowing anything about the internals of the system. These assumptions can then be turned against the system by specially crafting user input that may allow an attacker to achieve his goals."
+                  ],
                   "description": "aa",
                   "mitigation": "ss"
                 },
