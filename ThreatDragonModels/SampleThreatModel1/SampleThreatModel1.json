@@ -83,6 +83,49 @@
                   "class": "element-text hasOpenThreats isInScope"
                 }
               }
+            },
+            {
+              "type": "tm.Store",
+              "size": {
+                "width": 160,
+                "height": 80
+              },
+              "position": {
+                "x": 333,
+                "y": 33
+              },
+              "angle": 0,
+              "id": "82e63bf7-b784-4f96-973a-3e307a2a4284",
+              "z": 2,
+              "hasOpenThreats": true,
+              "threats": [
+                {
+                  "status": "Open",
+                  "severity": "Medium",
+                  "title": "sample",
+                  "type": "OWASP Top Ten 2017 Category A2 - Broken Authentication",
+                  "subtype": "Insufficiently Protected Credentials",
+                  "subCategorySummary": "This weakness occurs when the application transmits or stores authentication credentials and uses an insecure method that is susceptible to unauthorized interception and/or retrieval.",
+                  "attackPatternType": "Engage in Deceptive Interactions",
+                  "attackPattern": "Action Spoofing",
+                  "attackPatternSummary": [
+                    "An adversary is able to disguise one action for another and therefore trick a user into initiating one type of action when they intend to initiate a different action. For example, a user might be led to believe that clicking a button will submit a query, but in fact it downloads software. Adversaries may perform this attack through social means, such as by simply convincing a victim to perform the action or relying on a user's natural inclination to do so, or through technical means, such as a clickjacking attack where a user sees one interface but is actually interacting with a second, invisible, interface."
+                  ],
+                  "description": "safs",
+                  "mitigation": "dsf"
+                }
+              ],
+              "attrs": {
+                ".element-shape": {
+                  "class": "element-shape hasOpenThreats isInScope"
+                },
+                "text": {
+                  "text": "store 1"
+                },
+                ".element-text": {
+                  "class": "element-text hasOpenThreats isInScope"
+                }
+              }
             }
           ]
         },
