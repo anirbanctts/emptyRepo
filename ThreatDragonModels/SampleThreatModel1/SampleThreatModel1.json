@@ -31,7 +31,7 @@
                 {
                   "status": "Open",
                   "severity": "Medium",
-                  "title": "sample threat title",
+                  "title": "sample threat title1",
                   "type": "OWASP Top Ten 2017 Category A2 - Broken Authentication",
                   "subtype": "Unprotected Storage of Credentials",
                   "description": "sample desc",
