@@ -44,7 +44,7 @@
                 {
                   "status": "Open",
                   "severity": "Medium",
-                  "title": "Poison messages 2",
+                  "title": "Poison messages 3",
                   "type": "OWASP Top Ten 2017 Category A3 - Sensitive Data Exposure",
                   "subtype": "Inadequate Encryption Strength",
                   "subCategorySummary": "The software stores or transmits sensitive data using an encryption scheme that is theoretically sound, but is not strong enough for the level of protection required.",
