@@ -60,7 +60,7 @@
                   "status": "Open",
                   "severity": "Medium",
                   "type": "OWASP Top Ten 2017 Category A2 - Broken Authentication",
-                  "title": "ww-3",
+                  "title": "ww3",
                   "subtype": "Session Fixation",
                   "subCategorySummary": "Authenticating a user, or otherwise establishing a new user session, without invalidating any existing session identifier gives an attacker the opportunity to steal authenticated sessions.",
                   "attackPatternType": "Manipulate Data Structures",
