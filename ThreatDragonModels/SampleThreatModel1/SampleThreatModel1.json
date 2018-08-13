@@ -77,7 +77,7 @@
                   "class": "element-shape hasOpenThreats isInScope"
                 },
                 "text": {
-                  "text": "process 0"
+                  "text": "MyProcess"
                 },
                 ".element-text": {
                   "class": "element-text hasOpenThreats isInScope"
