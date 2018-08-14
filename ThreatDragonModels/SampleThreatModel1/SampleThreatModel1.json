@@ -146,7 +146,7 @@
                   "class": "element-shape hasNoOpenThreats isInScope"
                 },
                 "text": {
-                  "text": "actor 3"
+                  "text": "sample_actor"
                 },
                 ".element-text": {
                   "class": "element-text hasNoOpenThreats isInScope"
