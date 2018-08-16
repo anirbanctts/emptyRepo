@@ -20,8 +20,8 @@
                 "height": 100
               },
               "position": {
-                "x": 50,
-                "y": 50
+                "x": 187,
+                "y": 24
               },
               "angle": 0,
               "id": "4ec4dd54-862b-4dd9-a6be-55c13fe95676",
@@ -160,8 +160,8 @@
                 "height": 100
               },
               "position": {
-                "x": 164,
-                "y": 171
+                "x": 224,
+                "y": 318
               },
               "angle": 0,
               "id": "ad82d205-663f-4666-8c23-a72a878adced",
@@ -176,6 +176,53 @@
                 },
                 ".element-text": {
                   "class": "element-text hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Flow",
+              "smooth": true,
+              "source": {
+                "id": "4ec4dd54-862b-4dd9-a6be-55c13fe95676"
+              },
+              "target": {
+                "id": "ad82d205-663f-4666-8c23-a72a878adced"
+              },
+              "vertices": [
+                {
+                  "x": 131,
+                  "y": 88
+                },
+                {
+                  "x": 159,
+                  "y": 160
+                },
+                {
+                  "x": 98,
+                  "y": 249
+                }
+              ],
+              "id": "6a676231-521a-48ec-89ef-b5e993dc28e0",
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "flow 4",
+                      "font-weight": "400",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "z": 6,
+              "hasOpenThreats": false,
+              "attrs": {
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                },
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
                 }
               }
             }
