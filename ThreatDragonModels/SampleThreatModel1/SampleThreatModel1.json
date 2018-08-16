@@ -217,6 +217,7 @@
               ],
               "z": 6,
               "hasOpenThreats": false,
+              "protocol": "HTTP",
               "attrs": {
                 ".marker-target": {
                   "class": "marker-target hasNoOpenThreats isInScope"
