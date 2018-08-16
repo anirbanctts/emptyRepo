@@ -20,8 +20,8 @@
                 "height": 100
               },
               "position": {
-                "x": 187,
-                "y": 24
+                "x": 12,
+                "y": 53
               },
               "angle": 0,
               "id": "4ec4dd54-862b-4dd9-a6be-55c13fe95676",
@@ -190,16 +190,12 @@
               },
               "vertices": [
                 {
-                  "x": 131,
-                  "y": 88
-                },
-                {
                   "x": 159,
                   "y": 160
                 },
                 {
-                  "x": 98,
-                  "y": 249
+                  "x": 136,
+                  "y": 288
                 }
               ],
               "id": "6a676231-521a-48ec-89ef-b5e993dc28e0",
@@ -226,6 +222,27 @@
                   "class": "connection hasNoOpenThreats isInScope"
                 }
               }
+            },
+            {
+              "type": "tm.Boundary",
+              "smooth": true,
+              "source": {
+                "x": 222,
+                "y": 8
+              },
+              "target": {
+                "x": 35,
+                "y": 226
+              },
+              "vertices": [
+                {
+                  "x": 314,
+                  "y": 98
+                }
+              ],
+              "id": "206bbace-426c-4ad2-8d89-4bd57fd47674",
+              "z": 7,
+              "attrs": {}
             }
           ]
         },
