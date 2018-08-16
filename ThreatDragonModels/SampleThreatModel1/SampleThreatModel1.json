@@ -120,7 +120,7 @@
                   "class": "element-shape hasOpenThreats isInScope"
                 },
                 "text": {
-                  "text": "my store"
+                  "text": "mystore"
                 },
                 ".element-text": {
                   "class": "element-text hasOpenThreats isInScope"
@@ -231,6 +231,10 @@
                 "y": 226
               },
               "vertices": [
+                {
+                  "x": 220,
+                  "y": 39
+                },
                 {
                   "x": 179,
                   "y": 164
