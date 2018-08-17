@@ -58,7 +58,7 @@
                 },
                 {
                   "status": "Open",
-                  "severity": "Medium",
+                  "severity": "Low",
                   "type": "OWASP Top Ten 2017 Category A2 - Broken Authentication",
                   "title": "ww3",
                   "subtype": "Session Fixation",
@@ -68,8 +68,9 @@
                   "attackPatternSummary": [
                     "This attack pattern involves an adversary manipulating a pointer within a target application resulting in the application accessing an unintended memory location. This can result in the crashing of the application or, for certain pointer values, access to data that would not normally be possible or the execution of arbitrary code. Since pointers are simply integer variables, Integer Attacks may often be used in Pointer Attacks."
                   ],
-                  "description": "wwq1",
-                  "mitigation": ""
+                  "description": "wwq1i",
+                  "mitigation": "",
+                  "vulnerabilityRating": "0.4"
                 }
               ],
               "attrs": {
@@ -101,7 +102,7 @@
               "threats": [
                 {
                   "status": "Open",
-                  "severity": "Medium",
+                  "severity": "Low",
                   "title": "sample12",
                   "type": "OWASP Top Ten 2017 Category A2 - Broken Authentication",
                   "subtype": "Insufficiently Protected Credentials",
@@ -112,8 +113,8 @@
                     "An adversary is able to disguise one action for another and therefore trick a user into initiating one type of action when they intend to initiate a different action. For example, a user might be led to believe that clicking a button will submit a query, but in fact it downloads software. Adversaries may perform this attack through social means, such as by simply convincing a victim to perform the action or relying on a user's natural inclination to do so, or through technical means, such as a clickjacking attack where a user sees one interface but is actually interacting with a second, invisible, interface."
                   ],
                   "description": "safs",
-                  "mitigation": "dsf",
-                  "vulnerabilityRating": "5.2"
+                  "mitigation": "dsftt",
+                  "vulnerabilityRating": "0.8"
                 }
               ],
               "attrs": {
