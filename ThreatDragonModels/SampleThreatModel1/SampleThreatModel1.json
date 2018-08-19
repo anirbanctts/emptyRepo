@@ -136,7 +136,7 @@
                 "height": 80
               },
               "position": {
-                "x": 414,
+                "x": 413,
                 "y": 165
               },
               "angle": 0,
@@ -148,7 +148,7 @@
                   "class": "element-shape hasNoOpenThreats isInScope"
                 },
                 "text": {
-                  "text": "sample_actor"
+                  "text": "sampleactor"
                 },
                 ".element-text": {
                   "class": "element-text hasNoOpenThreats isInScope"
