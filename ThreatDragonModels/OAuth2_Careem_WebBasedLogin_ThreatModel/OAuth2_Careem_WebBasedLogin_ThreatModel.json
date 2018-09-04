@@ -36,12 +36,12 @@
                   "subCategorySummary": "The application stores sensitive information in cleartext within a resource that might be accessible to another control sphere.",
                   "vulnerabilityRating": "5.1",
                   "description": "In case of client secret stored in source code or config file",
-                  "title": "Obtaining client secret from source code",
+                  "title": "Obtaining client secret from source code or Binary",
                   "mitigation": "",
                   "attackPatternType": "Collect and Analyze Information",
-                  "attackPattern": "Excavation",
+                  "attackPattern": "Reverse Engineering",
                   "attackPatternSummary": [
-                    "An adversary actively probes the target in a manner that is designed to solicit information that could be leveraged for malicious purposes. This is achieved by exploring the target via ordinary interactions for the purpose of gathering intelligence about the target, or by sending data that is syntactically invalid or non-standard in an attempt to produce a response that contains the desired data. As a result of these interactions, the adversary is able to obtain information from the target that aids the attacker in making inferences about its security, configuration, or potential vulnerabilities. Examplar exchanges with the target may trigger unhandled exceptions or verbose error messages that reveal information like stack traces, configuration information, path information, or database design. This type of attack also includes the manipulation of query strings in a URI to produce invalid SQL queries, or by trying alternative path values in the hope that the server will return useful information."
+                    "An adversary discovers the structure, function, and composition of an object, resource, or system by using a variety of analysis techniques to effectively determine how the analyzed entity was constructed or operates. The goal of reverse engineering is often to duplicate the function, or a part of the function, of an object in order to duplicate or \"back engineer\" some aspect of its functioning. Reverse engineering techniques can be applied to mechanical objects, electronic devices, or software, although the methodology and techniques involved in each type of analysis differ widely."
                   ]
                 }
               ],
