@@ -1397,7 +1397,7 @@
                   "position": 0.5,
                   "attrs": {
                     "text": {
-                      "text": "flow 4",
+                      "text": "9. return token",
                       "font-weight": "400",
                       "font-size": "small"
                     }
@@ -1441,7 +1441,7 @@
                   "position": 0.5,
                   "attrs": {
                     "text": {
-                      "text": "flow 5",
+                      "text": "6. validate login\ninformation",
                       "font-weight": "400",
                       "font-size": "small"
                     }
@@ -1480,7 +1480,7 @@
                   "position": 0.5,
                   "attrs": {
                     "text": {
-                      "text": "flow 6",
+                      "text": "5. send login\ninformation",
                       "font-weight": "400",
                       "font-size": "small"
                     }
@@ -1519,7 +1519,7 @@
                   "position": 0.5,
                   "attrs": {
                     "text": {
-                      "text": "flow 7",
+                      "text": "7. return login result",
                       "font-weight": "400",
                       "font-size": "small"
                     }
@@ -1558,7 +1558,7 @@
                   "position": 0.5,
                   "attrs": {
                     "text": {
-                      "text": "flow 8",
+                      "text": "3. return result of logi\nn screen information",
                       "font-weight": "400",
                       "font-size": "small"
                     }
@@ -1566,45 +1566,6 @@
                 }
               ],
               "z": 9,
-              "hasOpenThreats": false,
-              "attrs": {
-                ".marker-target": {
-                  "class": "marker-target hasNoOpenThreats isInScope"
-                },
-                ".connection": {
-                  "class": "connection hasNoOpenThreats isInScope"
-                }
-              }
-            },
-            {
-              "type": "tm.Flow",
-              "smooth": true,
-              "source": {
-                "id": "72e504d3-7374-4488-a70d-dfa20fc27edc"
-              },
-              "target": {
-                "id": "adbb6f55-4b48-4a36-87d1-7f68e4a7b915"
-              },
-              "vertices": [
-                {
-                  "x": 329,
-                  "y": 269
-                }
-              ],
-              "id": "fc32f6a1-82c6-4c1e-bcd5-dae051a25b57",
-              "labels": [
-                {
-                  "position": 0.5,
-                  "attrs": {
-                    "text": {
-                      "text": "flow 9",
-                      "font-weight": "400",
-                      "font-size": "small"
-                    }
-                  }
-                }
-              ],
-              "z": 10,
               "hasOpenThreats": false,
               "attrs": {
                 ".marker-target": {
@@ -1636,7 +1597,7 @@
                   "position": 0.5,
                   "attrs": {
                     "text": {
-                      "text": "flow 10",
+                      "text": "2. send login screen\ninformation",
                       "font-weight": "400",
                       "font-size": "small"
                     }
@@ -1667,10 +1628,13 @@
               "id": "e2f8309b-8ab2-4990-9cd9-b117baecca0c",
               "labels": [
                 {
-                  "position": 0.5,
+                  "position": {
+                    "distance": 0.5404738189041783,
+                    "offset": 6.244819242041558
+                  },
                   "attrs": {
                     "text": {
-                      "text": "flow 11",
+                      "text": "1. enter information",
                       "font-weight": "400",
                       "font-size": "small"
                     }
@@ -1678,6 +1642,88 @@
                 }
               ],
               "z": 12,
+              "hasOpenThreats": false,
+              "attrs": {
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                },
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Flow",
+              "smooth": true,
+              "source": {
+                "id": "72e504d3-7374-4488-a70d-dfa20fc27edc"
+              },
+              "target": {
+                "id": "adbb6f55-4b48-4a36-87d1-7f68e4a7b915"
+              },
+              "vertices": [
+                {
+                  "x": 331,
+                  "y": 283
+                }
+              ],
+              "id": "716fe9dd-12e3-4e87-9bc1-322bdfaa2aa2",
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "4. send oauth2\npasswordflowrequest",
+                      "font-weight": "400",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "z": 13,
+              "hasOpenThreats": false,
+              "attrs": {
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                },
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Flow",
+              "smooth": true,
+              "source": {
+                "id": "adbb6f55-4b48-4a36-87d1-7f68e4a7b915"
+              },
+              "target": {
+                "id": "adbb6f55-4b48-4a36-87d1-7f68e4a7b915"
+              },
+              "vertices": [
+                {
+                  "x": 685,
+                  "y": 141
+                },
+                {
+                  "x": 638,
+                  "y": 90
+                }
+              ],
+              "id": "7c129ce8-459a-448f-ab18-8cc92a14f9be",
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "8. generate token",
+                      "font-weight": "400",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "z": 14,
               "hasOpenThreats": false,
               "attrs": {
                 ".marker-target": {
