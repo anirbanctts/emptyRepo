@@ -35,9 +35,9 @@
                   "subtype": "Cleartext Storage of Sensitive Information",
                   "subCategorySummary": "The application stores sensitive information in cleartext within a resource that might be accessible to another control sphere.",
                   "vulnerabilityRating": "5.1",
-                  "description": "In case of client secret stored in source code or config file",
+                  "description": "This applies for all client types. For open source projects, secrets\n can be extracted directly from source code in their public\n repositories. Secrets can be extracted from application binaries\n just as easily when the published source is not available to the\n attacker. Even if an application takes significant measures to\n obfuscate secrets in their application distribution, one should\n consider that the secret can still be reverse-engineered by anyone\n with access to a complete functioning application bundle or binary.",
                   "title": "Obtaining client secret from source code or Binary",
-                  "mitigation": "",
+                  "mitigation": "Countermeasures:\n o Don’t issue secrets to public clients or clients with\n inappropriate security policy (Section 5.2.3.1).\n o Require user consent for public clients (Section 5.2.3.2).\n o Use deployment-specific client secrets (Section 5.2.3.4).\n o Revoke client secrets (Section 5.2.3.6).",
                   "attackPatternType": "Collect and Analyze Information",
                   "attackPattern": "Reverse Engineering",
                   "attackPatternSummary": [
