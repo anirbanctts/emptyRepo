@@ -1265,6 +1265,11 @@
           "height": 775.454345703125,
           "width": 3473.139404296875
         }
+      },
+      {
+        "title": "native-app-login_IssueToken",
+        "thumbnail": "./public/content/images/thumbnail.jpg",
+        "id": 1
       }
     ],
     "reviewer": "Anirban"
