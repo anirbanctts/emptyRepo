@@ -110,9 +110,9 @@
                   "subtype": null,
                   "subCategorySummary": "This weakness occurs when the application transmits or stores authentication credentials and uses an insecure method that is susceptible to unauthorized interception and/or retrieval.",
                   "attackPatternType": "Engage in Deceptive Interactions",
-                  "attackPattern": "Action Spoofing",
+                  "attackPattern": "154 - Resource Location Spoofing",
                   "attackPatternSummary": [
-                    "An adversary is able to disguise one action for another and therefore trick a user into initiating one type of action when they intend to initiate a different action. For example, a user might be led to believe that clicking a button will submit a query, but in fact it downloads software. Adversaries may perform this attack through social means, such as by simply convincing a victim to perform the action or relying on a user's natural inclination to do so, or through technical means, such as a clickjacking attack where a user sees one interface but is actually interacting with a second, invisible, interface."
+                    "An adversary deceives an application or user and convinces them to request a resource from an unintended location. By spoofing the location, the adversary can cause an alternate resource to be used, often one that the adversary controls and can be used to help them achieve their malicious goals."
                   ],
                   "description": "safs",
                   "mitigation": "dsftt",
