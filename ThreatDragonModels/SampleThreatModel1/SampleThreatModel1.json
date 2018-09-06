@@ -106,8 +106,8 @@
                   "status": "Open",
                   "severity": "Low",
                   "title": "sample12",
-                  "type": "OWASP Top Ten 2017 Category A2 - Broken Authentication",
-                  "subtype": "Insufficiently Protected Credentials",
+                  "type": "Hello there new threat",
+                  "subtype": null,
                   "subCategorySummary": "This weakness occurs when the application transmits or stores authentication credentials and uses an insecure method that is susceptible to unauthorized interception and/or retrieval.",
                   "attackPatternType": "Engage in Deceptive Interactions",
                   "attackPattern": "Action Spoofing",
@@ -117,7 +117,7 @@
                   "description": "safs",
                   "mitigation": "dsftt",
                   "vulnerabilityRating": "0.8",
-                  "deinitionSource": "owasp"
+                  "deinitionSource": "other"
                 }
               ],
               "attrs": {
