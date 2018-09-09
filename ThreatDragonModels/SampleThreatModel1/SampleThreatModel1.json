@@ -592,6 +592,11 @@
           "height": 590,
           "width": 790
         }
+      },
+      {
+        "title": "dawdasa",
+        "thumbnail": "./public/content/images/thumbnail.jpg",
+        "id": 2
       }
     ]
   }
