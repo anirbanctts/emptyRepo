@@ -527,7 +527,7 @@
                   "class": "element-shape hasNoOpenThreats isInScope"
                 },
                 "text": {
-                  "text": "process0"
+                  "text": "process 0"
                 },
                 ".element-text": {
                   "class": "element-text hasNoOpenThreats isInScope"
