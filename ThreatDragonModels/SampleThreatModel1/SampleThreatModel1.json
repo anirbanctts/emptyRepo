@@ -541,8 +541,8 @@
                 "height": 80
               },
               "position": {
-                "x": 50,
-                "y": 50
+                "x": 224,
+                "y": 242
               },
               "angle": 0,
               "id": "f159b2a6-8342-4b6f-a741-a4c2264f5cc4",
@@ -554,6 +554,32 @@
                 },
                 "text": {
                   "text": "actor 1"
+                },
+                ".element-text": {
+                  "class": "element-text hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Store",
+              "size": {
+                "width": 160,
+                "height": 80
+              },
+              "position": {
+                "x": 50,
+                "y": 50
+              },
+              "angle": 0,
+              "id": "c14fbbe5-6ba9-45ae-a70e-11b8aed23a60",
+              "z": 3,
+              "hasOpenThreats": false,
+              "attrs": {
+                ".element-shape": {
+                  "class": "element-shape hasNoOpenThreats isInScope"
+                },
+                "text": {
+                  "text": "store 2"
                 },
                 ".element-text": {
                   "class": "element-text hasNoOpenThreats isInScope"
