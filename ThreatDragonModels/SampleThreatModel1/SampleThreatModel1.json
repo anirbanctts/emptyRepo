@@ -501,6 +501,11 @@
             "width": 790
           }
         }
+      },
+      {
+        "title": "MyDiagram",
+        "thumbnail": "./public/content/images/thumbnail.jpg",
+        "id": 1
       }
     ]
   }
