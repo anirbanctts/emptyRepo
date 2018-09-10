@@ -71,6 +71,23 @@
                   "vulnerabilityRating": "8.6",
                   "description": "An attacker may obtain the refresh tokens issued to a web application\nby way of overcoming the web server’s security controls.\n\nSince a web application manages the user accounts of a\ncertain site, such an attack would result in an exposure of all\nrefresh tokens on that site to the attacker.",
                   "mitigation": "Use strong client authentication (e.g., client_assertion/\nclient_token) so the attacker cannot obtain the client secret\nrequired to exchange the tokens"
+                },
+                {
+                  "status": "Open",
+                  "severity": "Medium",
+                  "deinitionSource": "owasp",
+                  "title": "Obtain refresh token -  by lack of web server protection",
+                  "type": "OWASP Top Ten 2017 Category A3 - Sensitive Data Exposure",
+                  "subtype": "311 - Missing Encryption of Sensitive Data",
+                  "subCategorySummary": "The software does not encrypt sensitive or critical information before storage or transmission.",
+                  "attackPatternType": "Collect and Analyze Information",
+                  "attackPattern": "116 - Excavation",
+                  "attackPatternSummary": [
+                    "An adversary actively probes the target in a manner that is designed to solicit information that could be leveraged for malicious purposes. This is achieved by exploring the target via ordinary interactions for the purpose of gathering intelligence about the target, or by sending data that is syntactically invalid or non-standard in an attempt to produce a response that contains the desired data. As a result of these interactions, the adversary is able to obtain information from the target that aids the attacker in making inferences about its security, configuration, or potential vulnerabilities. Examplar exchanges with the target may trigger unhandled exceptions or verbose error messages that reveal information like stack traces, configuration information, path information, or database design. This type of attack also includes the manipulation of query strings in a URI to produce invalid SQL queries, or by trying alternative path values in the hope that the server will return useful information."
+                  ],
+                  "vulnerabilityRating": "6.8",
+                  "mitigation": "Use standard web server protection and configuration measures to\nprotect the integrity of the server, databases, configuration files,\nand other operational components of the server",
+                  "description": "An attacker may obtain the refresh tokens issued to a web application\nby way of overcoming the web server’s security controls.\nImpact: Since a web application manages the user accounts of a\ncertain site, such an attack would result in an exposure of all\nrefresh tokens on that site to the attacker"
                 }
               ],
               "attrs": {
