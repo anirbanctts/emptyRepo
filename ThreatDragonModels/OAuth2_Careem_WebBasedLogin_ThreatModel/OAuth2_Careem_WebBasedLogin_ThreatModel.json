@@ -88,6 +88,18 @@
                   "vulnerabilityRating": "6.8",
                   "mitigation": "Use standard web server protection and configuration measures to\nprotect the integrity of the server, databases, configuration files,\nand other operational components of the server",
                   "description": "An attacker may obtain the refresh tokens issued to a web application\nby way of overcoming the web server’s security controls.\nImpact: Since a web application manages the user accounts of a\ncertain site, such an attack would result in an exposure of all\nrefresh tokens on that site to the attacker"
+                },
+                {
+                  "status": "Open",
+                  "severity": "Critical",
+                  "deinitionSource": "cwe",
+                  "title": "Obtaining Access Token from Client",
+                  "type": "Limit Access",
+                  "subtype": "201 - Information Exposure Through Sent Data",
+                  "subCategorySummary": "The accidental exposure of sensitive information through sent data refers to the transmission of data which are either sensitive in and of itself or useful in the further exploitation of the system through standard data channels.",
+                  "vulnerabilityRating": "9.5",
+                  "description": "Access tokens could be stolen\nfrom the device if the application stores them in a storage device\nthat is accessible to other applications.\nImpact: Where the token is a bearer token and no additional mechanism\nis used to identify the client, the attacker can access all resources\nassociated with the token and its scope.",
+                  "mitigation": "Countermeasures:\no Keep access tokens in transient memory and limit grants.\no Limit token scope.\no Keep access tokens in private memory or apply same protection\nmeans as for refresh tokens.\no Keep access token lifetime short."
                 }
               ],
               "attrs": {
