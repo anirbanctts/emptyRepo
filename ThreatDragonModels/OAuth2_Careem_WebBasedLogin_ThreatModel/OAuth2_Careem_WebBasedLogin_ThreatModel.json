@@ -140,6 +140,18 @@
                   "vulnerabilityRating": "9.5",
                   "description": "CWE-451: User Interface (UI) Misrepresentation of Critical Information - could be a better fit.\nA malicious application could attempt to phish end-user passwords by\nmisusing an embedded browser in the end-user authorization process,\nor by presenting its own user interface instead of allowing a trusted\nsystem browser to render the authorization user interface. By doing\nso, the usual visual trust mechanisms may be bypassed (e.g.,\nTransport Layer Security (TLS) confirmation, web site mechanisms).\nBy using an embedded or internal client application user interface,\nthe client application has access to additional information to which\nit should not have access (e.g., UID/password).\n\nImpact: If the client application or the communication is\ncompromised, the user would not be aware of this, and all information\nin the authorization exchange, such as username and password, could\nbe captured.",
                   "mitigation": "Countermeasures:\no The OAuth flow is designed so that client applications never need\nto know user passwords. Client applications should avoid directly\nasking users for their credentials. In addition, end users could\nbe educated about phishing attacks and best practices, such as\nonly accessing trusted clients, as OAuth does not provide any\nprotection against malicious applications and the end user is\nsolely responsible for the trustworthiness of any native\napplication installed.\no Client applications could be validated prior to publication in an\napplication market for users to access. That validation is out of\nscope for OAuth but could include validating that the client\napplication handles user authentication in an appropriate way.\no Client developers should not write client applications that\ncollect authentication information directly from users and should\ninstead delegate this task to a trusted system component, e.g.,\nthe system browser."
+                },
+                {
+                  "status": "Open",
+                  "severity": "High",
+                  "deinitionSource": "cwe",
+                  "description": "An open redirector is an endpoint using a parameter to automatically\nredirect a user agent to the location specified by the parameter\nvalue without any validation. If the authorization server allows the\nclient to register only part of the redirect URI, an attacker can use\nan open redirector operated by the client to construct a redirect URI\nthat will pass the authorization server validation but will send the\nauthorization \"code\" or access token to an endpoint under the control\nof the attacker.\nImpact: An attacker could gain access to authorization \"codes\" or\naccess tokens.",
+                  "mitigation": "Countermeasures:\no Require clients to register full redirect URI",
+                  "title": "Open Redirectors on Client",
+                  "type": "Validate Inputs",
+                  "subtype": "601 - URL Redirection to Untrusted Site ('Open Redirect')",
+                  "subCategorySummary": "A web application accepts a user-controlled input that specifies a link to an external site, and uses that link in a Redirect. This simplifies phishing attacks.",
+                  "vulnerabilityRating": "8.7"
                 }
               ],
               "attrs": {
