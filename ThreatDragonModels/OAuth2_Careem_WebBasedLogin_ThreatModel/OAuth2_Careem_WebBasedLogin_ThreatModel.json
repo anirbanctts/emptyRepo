@@ -31,18 +31,19 @@
                 {
                   "status": "Open",
                   "severity": "Medium",
-                  "type": "Other",
-                  "subtype": "Cleartext Storage of Sensitive Information",
+                  "type": "OWASP Top Ten 2017 Category A3 - Sensitive Data Exposure",
+                  "subtype": "312 - Cleartext Storage of Sensitive Information",
                   "subCategorySummary": "The application stores sensitive information in cleartext within a resource that might be accessible to another control sphere.",
-                  "vulnerabilityRating": "5.1",
+                  "vulnerabilityRating": "6.8",
                   "description": "This applies for all client types. For open source projects, secrets\n can be extracted directly from source code in their public\n repositories. Secrets can be extracted from application binaries\n just as easily when the published source is not available to the\n attacker. Even if an application takes significant measures to\n obfuscate secrets in their application distribution, one should\n consider that the secret can still be reverse-engineered by anyone\n with access to a complete functioning application bundle or binary.",
                   "title": "Obtaining client secret from source code or Binary",
                   "mitigation": "Countermeasures:\n o Don’t issue secrets to public clients or clients with\n inappropriate security policy (Section 5.2.3.1).\n o Require user consent for public clients (Section 5.2.3.2).\n o Use deployment-specific client secrets (Section 5.2.3.4).\n o Revoke client secrets (Section 5.2.3.6).",
                   "attackPatternType": "Collect and Analyze Information",
-                  "attackPattern": "Reverse Engineering",
+                  "attackPattern": "188 - Reverse Engineering",
                   "attackPatternSummary": [
                     "An adversary discovers the structure, function, and composition of an object, resource, or system by using a variety of analysis techniques to effectively determine how the analyzed entity was constructed or operates. The goal of reverse engineering is often to duplicate the function, or a part of the function, of an object in order to duplicate or \"back engineer\" some aspect of its functioning. Reverse engineering techniques can be applied to mechanical objects, electronic devices, or software, although the methodology and techniques involved in each type of analysis differ widely."
-                  ]
+                  ],
+                  "deinitionSource": "owasp"
                 },
                 {
                   "status": "Open",
