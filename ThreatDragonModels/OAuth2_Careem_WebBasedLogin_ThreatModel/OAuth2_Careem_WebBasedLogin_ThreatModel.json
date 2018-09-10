@@ -536,13 +536,27 @@
                 }
               ],
               "z": 13,
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
+              "threats": [
+                {
+                  "status": "Open",
+                  "severity": "High",
+                  "deinitionSource": "cwe",
+                  "title": "Password Phishing by Counterfeit Authorization Server",
+                  "type": "Validate Inputs",
+                  "subtype": "601 - URL Redirection to Untrusted Site ('Open Redirect')",
+                  "subCategorySummary": "A web application accepts a user-controlled input that specifies a link to an external site, and uses that link in a Redirect. This simplifies phishing attacks.",
+                  "vulnerabilityRating": "8.6",
+                  "description": "OAuth makes no attempt to verify the authenticity of the\nauthorization server. A hostile party could take advantage of this\nby intercepting the client’s requests and returning misleading or\notherwise incorrect responses. This could be achieved using DNS or\nAddress Resolution Protocol (ARP) spoofing. Wide deployment of OAuth\nand similar protocols may cause users to become inured to the\npractice of being redirected to web sites where they are asked to\nenter their passwords. If users are not careful to verify the\nauthenticity of these web sites before entering their credentials, it\nwill be possible for attackers to exploit this practice to steal\nusers’ passwords.",
+                  "mitigation": "Countermeasures:\no Authorization servers should consider such attacks when developing\nservices based on OAuth and should require the use of transportlayer\nsecurity for any requests where the authenticity of the\nauthorization server or of request responses is an issue.\no Authorization servers should attempt to educate users about the\nrisks posed by phishing attacks and should provide mechanisms that\nmake it easy for users to confirm the authenticity of their sites."
+                }
+              ],
               "attrs": {
                 ".marker-target": {
-                  "class": "marker-target hasNoOpenThreats isInScope"
+                  "class": "marker-target hasOpenThreats isInScope"
                 },
                 ".connection": {
-                  "class": "connection hasNoOpenThreats isInScope"
+                  "class": "connection hasOpenThreats isInScope"
                 }
               }
             },
