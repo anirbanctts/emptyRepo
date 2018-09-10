@@ -179,16 +179,35 @@
               "angle": 0,
               "id": "c686565f-0cb5-4c40-846d-9703aed937ad",
               "z": 4,
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
+              "threats": [
+                {
+                  "status": "Open",
+                  "severity": "High",
+                  "deinitionSource": "cwe",
+                  "title": "Malicious Client Obtains Existing Authorization by Fraud",
+                  "type": "Authorize Actors",
+                  "subtype": "862 - Missing Authorization",
+                  "subCategorySummary": "The software does not perform an authorization check when an actor attempts to access a resource or perform an action.",
+                  "attackPatternType": "Engage in Deceptive Interactions",
+                  "attackPattern": "151 - Identity Spoofing",
+                  "attackPatternSummary": [
+                    "Identity Spoofing refers to the action of assuming (i.e., taking on) the identity of some other entity (human or non-human) and then using that identity to accomplish a goal. An adversary may craft messages that appear to come from a different principle or use stolen / spoofed authentication credentials. Alternatively, an adversary may intercept a message from a legitimate sender and attempt to make it look like the message comes from them without changing its content. The latter form of this attack can be used to hijack credentials from legitimate users. Identity Spoofing attacks need not be limited to transmitted messages - any resource that is associated with an identity (for example, a file with a signature) can be the target of an attack where the adversary attempts to change the apparent identity. This attack differs from Content Spoofing attacks where the adversary does not wish to change the apparent identity of the message but instead wishes to change what the message says. In an Identity Spoofing attack, the adversary is attempting to change the identity of the content."
+                  ],
+                  "description": "Authorization servers may wish to automatically process authorization\nrequests from clients that have been previously authorized by the\nuser. When the user is redirected to the authorization server’s enduser\nauthorization endpoint to grant access, the authorization server\ndetects that the user has already granted access to that particular\nclient. Instead of prompting the user for approval, the\nauthorization server automatically redirects the user back to the\nclient.\nA malicious client may exploit that feature and try to obtain such an\nauthorization \"code\" instead of the legitimate client.",
+                  "vulnerabilityRating": "8.4",
+                  "mitigation": "Countermeasures:\no Authorization servers should not automatically process repeat\nauthorizations to public clients unless the client is validated\nusing a pre-registered redirect URI.\no Authorization servers can mitigate the risks associated with\nautomatic processing by limiting the scope of access tokens\nobtained through automated approvals."
+                }
+              ],
               "attrs": {
                 ".element-shape": {
-                  "class": "element-shape hasNoOpenThreats isInScope"
+                  "class": "element-shape hasOpenThreats isInScope"
                 },
                 "text": {
                   "text": "Authorization\nServer"
                 },
                 ".element-text": {
-                  "class": "element-text hasNoOpenThreats isInScope"
+                  "class": "element-text hasOpenThreats isInScope"
                 }
               }
             },
