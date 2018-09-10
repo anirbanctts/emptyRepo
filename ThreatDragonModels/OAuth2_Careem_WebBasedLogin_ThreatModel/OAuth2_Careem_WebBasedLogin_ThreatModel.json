@@ -49,7 +49,7 @@
                   "severity": "Medium",
                   "deinitionSource": "other",
                   "title": "Obtain a Deployment-Specific Secret",
-                  "type": "An attacker may try to obtain the secret from a client installation,\neither from a web site (web server) or a particular device (native\napplication)",
+                  "type": "An attacker may try to obtain the secret from a client installation.",
                   "vulnerabilityRating": "6.8",
                   "description": "An attacker may try to obtain the secret from a client installation,\neither from a web site (web server) or a particular device (native\napplication)",
                   "mitigation": "Plan--------\n1. Web server: Apply standard web server protection measures (for\nconfig files and databases)\n2. Native applications: Store secrets in secure local storage\n3. Revoke client secrets",
