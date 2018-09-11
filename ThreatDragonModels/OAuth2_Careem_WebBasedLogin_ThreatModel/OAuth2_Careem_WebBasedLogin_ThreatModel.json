@@ -214,7 +214,7 @@
                   "status": "Open",
                   "severity": "Medium",
                   "deinitionSource": "cwe",
-                  "title": "Token Endpoint - Obtaining Access Tokens from Authorization Server Database - SQL Injection",
+                  "title": "Token Endpoint - Obtaining Access Tokens and client id & secret from Authorization Server Database - SQL Injection",
                   "type": "Validate Inputs",
                   "subtype": "75 - Failure to Sanitize Special Elements into a Different Plane (Special Element Injection)",
                   "subCategorySummary": "The software does not adequately filter user-controlled input for special elements with control implications.",
@@ -223,14 +223,14 @@
                     "This attack exploits target software that constructs SQL statements based on user input. An attacker crafts input strings so that when the target software constructs SQL statements based on the input, the resulting SQL statement performs actions other than those the application intended. SQL Injection results from failure of the application to appropriately validate input. When specially crafted user-controlled input consisting of SQL syntax is used without proper validation as part of SQL queries, it is possible to glean information from the database in ways not envisaged during application design. Depending upon the database and the design of the application, it may also be possible to leverage injection to have the database execute system-related commands of the attackers' choice. SQL Injection enables an attacker to talk directly to the database, thus bypassing the application completely. Successful injection can cause information disclosure as well as ability to add or modify data in the database. In order to successfully inject SQL and retrieve information from a database, an attacker:"
                   ],
                   "vulnerabilityRating": "6.8",
-                  "description": "This threat is applicable if the authorization server stores access\ntokens as handles in a database. An attacker may obtain access\ntokens from the authorization server’s database by launching a SQL injection attack.\nImpact: Disclosure of all access tokens.",
+                  "description": "This threat is applicable if the authorization server stores access\ntokens as handles in a database. An attacker may obtain access\ntokens or client secret from the authorization server’s database by launching a SQL injection attack.\n\nImpact: \nDisclosure of all access tokens.\nDisclosure of all client_id/secret combinations. This allows the attacker to act on behalf of legitimate clients.",
                   "mitigation": "Countermeasures:\no Enforce standard SQL injection countermeasures"
                 },
                 {
                   "status": "Open",
                   "severity": "Medium",
                   "deinitionSource": "owasp",
-                  "title": "Token Endpoint - Obtaining Access Tokens from Authorization Server Database - Unsecured Access",
+                  "title": "Token Endpoint - Obtaining Access Tokens and Client Id & Secrets from Authorization Server Database - Unsecured Access",
                   "type": "OWASP Top Ten 2017 Category A5 - Broken Access Control",
                   "subtype": "284 - Improper Access Control",
                   "subCategorySummary": "The software does not restrict or incorrectly restricts access to a resource from an unauthorized actor.",
@@ -239,8 +239,8 @@
                     "An attacker gains access to application, service, or device with the privileges of an authorized or privileged user by evading or circumventing an authentication mechanism. The attacker is therefore able to access protected data without authentication ever having taken place. This refers to an attacker gaining access equivalent to an authenticated user without ever going through an authentication procedure. This is usually the result of the attacker using an unexpected access procedure that does not go through the proper checkpoints where authentication should occur. For example, a web site might assume that all users will click through a given link in order to get to secure material and simply authenticate everyone that clicks the link. However, an attacker might be able to reach secured web content by explicitly entering the path to the content rather than clicking through the authentication link, thereby avoiding the check entirely. This attack pattern differs from other authentication attacks in that attacks of this pattern avoid authentication entirely, rather than faking authentication by exploiting flaws or by stealing credentials from legitimate users."
                   ],
                   "vulnerabilityRating": "6.9",
-                  "description": "This threat is applicable if the authorization server stores access\ntokens as handles in a database. An attacker may obtain access\ntokens from the authorization server’s database by gaining access to\nthe database\n\nImpact: Disclosure of all access tokens.",
-                  "mitigation": "Countermeasures:\no Enforce system security measures\no Store access token hashes only"
+                  "description": "For Access Token - This threat is applicable if the authorization server stores access tokens as handles in a database. An attacker may obtain access\ntokens from the authorization server’s database by gaining access to\nthe database\n\nFor Client Secret - An attacker may obtain valid client_id/secret combinations from the authorization server’s database by gaining access to the database.\n\nImpact: \nDisclosure of all access tokens.\nDisclosure of all client_id/secret combinations. This allows the attacker to act on behalf of legitimate clients.",
+                  "mitigation": "Countermeasures:\no Enforce system security measures\no Store access token hashes only or Enforce Credential Storage Protection Best Practices"
                 }
               ],
               "attrs": {
