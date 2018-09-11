@@ -1406,13 +1406,31 @@
                 }
               ],
               "z": 32,
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
+              "threats": [
+                {
+                  "status": "Open",
+                  "severity": "High",
+                  "deinitionSource": "cwe",
+                  "title": "Token Endpoint - Disclosure of Client Credentials during Transmission",
+                  "type": "Authorize Actors",
+                  "subtype": "300 - Channel Accessible by Non-Endpoint ('Man-in-the-Middle')",
+                  "subCategorySummary": "The product does not adequately verify the identity of actors at both ends of a communication channel, or does not adequately ensure the integrity of the channel, in a way that allows the channel to be accessed or influenced by an actor that is not an endpoint.",
+                  "vulnerabilityRating": "8.1",
+                  "description": "An attacker could attempt to eavesdrop the transmission of client\ncredentials between the client and server during the client\nauthentication process or during OAuth token requests.\nImpact: Revelation of a client credential enabling phishing or\nimpersonation of a client service.",
+                  "mitigation": "Countermeasures:\no The transmission of client credentials must be protected using\ntransport-layer mechanisms such as TLS.\no Use alternative authentication means that do not require the\nsending of plaintext credentials over the wire (e.g., Hash-based\nMessage Authentication Code).",
+                  "attackPattern": "158 - Sniffing Network Traffic",
+                  "attackPatternSummary": [
+                    "In this attack pattern, the adversary monitors network traffic between nodes of a public or multicast network in an attempt to capture sensitive information at the protocol level. Network sniffing applications can reveal TCP/IP, DNS, Ethernet, and other low-level network communication information. The adversary takes a passive role in this attack pattern and simply observes and analyzes the traffic. The adversary may precipitate or indirectly influence the content of the observed transaction, but is never the intended recipient of the target information."
+                  ]
+                }
+              ],
               "attrs": {
                 ".marker-target": {
-                  "class": "marker-target hasNoOpenThreats isInScope"
+                  "class": "marker-target hasOpenThreats isInScope"
                 },
                 ".connection": {
-                  "class": "connection hasNoOpenThreats isInScope"
+                  "class": "connection hasOpenThreats isInScope"
                 }
               }
             },
