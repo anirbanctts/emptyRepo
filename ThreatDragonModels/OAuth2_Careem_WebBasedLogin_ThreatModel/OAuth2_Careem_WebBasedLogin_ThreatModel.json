@@ -1311,13 +1311,31 @@
                 }
               ],
               "z": 31,
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
+              "threats": [
+                {
+                  "status": "Open",
+                  "severity": "High",
+                  "deinitionSource": "cwe",
+                  "title": "Eavesdropping Access Tokens",
+                  "type": "Authorize Actors",
+                  "subtype": "300 - Channel Accessible by Non-Endpoint ('Man-in-the-Middle')",
+                  "subCategorySummary": "The product does not adequately verify the identity of actors at both ends of a communication channel, or does not adequately ensure the integrity of the channel, in a way that allows the channel to be accessed or influenced by an actor that is not an endpoint.",
+                  "attackPattern": "158 - Sniffing Network Traffic",
+                  "attackPatternSummary": [
+                    "In this attack pattern, the adversary monitors network traffic between nodes of a public or multicast network in an attempt to capture sensitive information at the protocol level. Network sniffing applications can reveal TCP/IP, DNS, Ethernet, and other low-level network communication information. The adversary takes a passive role in this attack pattern and simply observes and analyzes the traffic. The adversary may precipitate or indirectly influence the content of the observed transaction, but is never the intended recipient of the target information."
+                  ],
+                  "vulnerabilityRating": "8.1",
+                  "description": "Attackers may attempt to eavesdrop access tokens in transit from the\nauthorization server to the client.\nImpact: The attacker is able to access all resources with the\npermissions covered by the scope of the particular access token.",
+                  "mitigation": "Countermeasures:\no As per the core OAuth spec, the authorization servers must ensure\nthat these transmissions are protected using transport-layer\nmechanisms such as TLS.\no If end-to-end confidentiality cannot be guaranteed, reducing scope and expiry time for access\ntokens can be used to reduce the damage in case of leaks."
+                }
+              ],
               "attrs": {
                 ".marker-target": {
-                  "class": "marker-target hasNoOpenThreats isInScope"
+                  "class": "marker-target hasOpenThreats isInScope"
                 },
                 ".connection": {
-                  "class": "connection hasNoOpenThreats isInScope"
+                  "class": "connection hasOpenThreats isInScope"
                 }
               }
             },
