@@ -703,13 +703,27 @@
                 }
               ],
               "z": 15,
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
+              "threats": [
+                {
+                  "status": "Open",
+                  "severity": "Medium",
+                  "deinitionSource": "cwe",
+                  "title": "Authorization Endpoint - User Unintentionally Grants Too Much Access Scope",
+                  "type": "Limit Access",
+                  "subtype": "250 - Execution with Unnecessary Privileges",
+                  "subCategorySummary": "The software performs an operation at a privilege level that is higher than the minimum level required, which creates new weaknesses or amplifies the consequences of other weaknesses.",
+                  "description": "When obtaining end-user authorization, the end user may not\nunderstand the scope of the access being granted and to whom, or they\nmay end up providing a client with access to resources that should\nnot be permitted.",
+                  "mitigation": "Countermeasures:\no Explain the scope (resources and the permissions) the user is\nabout to grant in an understandable way.\no Narrow the scope, based on the client. When obtaining end-user\nauthorization and where the client requests scope, the\nauthorization server may want to consider whether to honor that\nscope based on the client identifier. That decision is between\nthe client and authorization server and is outside the scope of\nthis spec. The authorization server may also want to consider\nwhat scope to grant based on the client type, e.g., providing\nlower scope to public clients.",
+                  "vulnerabilityRating": "4.8"
+                }
+              ],
               "attrs": {
                 ".marker-target": {
-                  "class": "marker-target hasNoOpenThreats isInScope"
+                  "class": "marker-target hasOpenThreats isInScope"
                 },
                 ".connection": {
-                  "class": "connection hasNoOpenThreats isInScope"
+                  "class": "connection hasOpenThreats isInScope"
                 }
               }
             },
@@ -1147,27 +1161,14 @@
                 }
               ],
               "z": 27,
-              "hasOpenThreats": true,
-              "threats": [
-                {
-                  "status": "Open",
-                  "severity": "Medium",
-                  "deinitionSource": "cwe",
-                  "mitigation": "Countermeasures:\no Explain the scope (resources and the permissions) the user is\nabout to grant in an understandable way.\no Narrow the scope, based on the client. When obtaining end-user\nauthorization and where the client requests scope, the\nauthorization server may want to consider whether to honor that\nscope based on the client identifier. That decision is between\nthe client and authorization server and is outside the scope of\nthis spec. The authorization server may also want to consider\nwhat scope to grant based on the client type, e.g., providing\nlower scope to public clients.",
-                  "description": "When obtaining end-user authorization, the end user may not\nunderstand the scope of the access being granted and to whom, or they\nmay end up providing a client with access to resources that should\nnot be permitted.",
-                  "vulnerabilityRating": "4.8",
-                  "type": "Limit Access",
-                  "subtype": "250 - Execution with Unnecessary Privileges",
-                  "subCategorySummary": "The software performs an operation at a privilege level that is higher than the minimum level required, which creates new weaknesses or amplifies the consequences of other weaknesses.",
-                  "title": "Authorization Endpoint - User Unintentionally Grants Too Much Access Scope"
-                }
-              ],
+              "hasOpenThreats": false,
+              "threats": [],
               "attrs": {
                 ".marker-target": {
-                  "class": "marker-target hasOpenThreats isInScope"
+                  "class": "marker-target hasNoOpenThreats isInScope"
                 },
                 ".connection": {
-                  "class": "connection hasOpenThreats isInScope"
+                  "class": "connection hasNoOpenThreats isInScope"
                 }
               }
             },
