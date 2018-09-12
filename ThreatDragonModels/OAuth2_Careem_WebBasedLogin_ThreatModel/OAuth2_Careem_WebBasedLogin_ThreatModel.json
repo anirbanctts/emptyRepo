@@ -208,6 +208,22 @@
                   "subtype": "601 - URL Redirection to Untrusted Site ('Open Redirect')",
                   "subCategorySummary": "A web application accepts a user-controlled input that specifies a link to an external site, and uses that link in a Redirect. This simplifies phishing attacks.",
                   "vulnerabilityRating": "8.7"
+                },
+                {
+                  "status": "Open",
+                  "severity": "High",
+                  "deinitionSource": "cwebydev",
+                  "title": "Authorization Code - Clickjacking Attack against Authorization",
+                  "mitigation": "Countermeasures:\no For newer browsers, avoidance of iFrames during authorization can be enforced on the server side by using the X-FRAME-OPTIONS header.\no For older browsers, JavaScript frame-busting techniques can be used but may not be effective in all browsers",
+                  "description": "With clickjacking, a malicious site loads the target site in a\ntransparent iFrame overlaid on top of a set of dummy\nbuttons that are carefully constructed to be placed directly under\nimportant buttons on the target site. When a user clicks a visible\nbutton, they are actually clicking a button (such as an \"Authorize\"\nbutton) on the hidden page.\nImpact: An attacker can steal a user’s authentication credentials and\naccess their resources.",
+                  "vulnerabilityRating": "8.3",
+                  "attackPattern": "103 - Clickjacking",
+                  "attackPatternSummary": [
+                    "In a clickjacking attack the victim is tricked into unknowingly initiating some action in one system while interacting with the UI from a seemingly completely different system. While being logged in to some target system, the victim visits the adversary's malicious site which displays a UI that the victim wishes to interact with. In reality, the clickjacked page has a transparent layer above the visible UI with action controls that the adversary wishes the victim to execute. The victim clicks on buttons or other UI elements they see on the page which actually triggers the action controls in the transparent overlaying layer. Depending on what that action control is, the adversary may have just tricked the victim into executing some potentially privileged (and most certainly undesired) functionality in the target system to which the victim is authenticated. The basic problem here is that there is a dichotomy between what the victim thinks they are clicking on versus what they are actually clicking on."
+                  ],
+                  "type": "Web Problems",
+                  "subtype": "1021 - Improper Restriction of Rendered UI Layers or Frames",
+                  "subCategorySummary": "The web application does not restrict or incorrectly restricts frame objects or UI layers that belong to another application or domain, which can lead to user confusion about which interface the user is interacting with."
                 }
               ],
               "attrs": {
