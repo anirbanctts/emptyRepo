@@ -116,6 +116,20 @@
                     "An attacker carefully crafts small snippets of Java Script to efficiently detect the type of browser the potential victim is using. Many web-based attacks need prior knowledge of the web browser including the version of browser to ensure successful exploitation of a vulnerability. Having this knowledge allows an attacker to target the victim with attacks that specifically exploit known or zero day weaknesses in the type and version of the browser used by the victim. Automating this process via Java Script as a part of the same delivery system used to exploit the browser is considered more efficient as the attacker can supply a browser fingerprinting method and integrate it with exploit code, all contained in Java Script and in response to the same web page request by the browser."
                   ],
                   "title": "Authorization Code - Leaking Authorization codes"
+                },
+                {
+                  "status": "Open",
+                  "severity": "Medium",
+                  "deinitionSource": "other",
+                  "title": "Authorization Code - User Session Impersonation",
+                  "type": "DNS or ARP spoofing",
+                  "attackPattern": "598 - DNS Spoofing",
+                  "attackPatternSummary": [
+                    "An adversary sends a malicious (\"NXDOMAIN\" (\"No such domain\") code, or DNS A record) response to a targets route request before a legitimate resolver can. This technique requires an On-path or In-path device that can monitor and respond to the targets DNS requests. This attack differs from BGP Tampering in that it directly responds to requests made by the target instead of polluting the routing the targets infrastructure uses."
+                  ],
+                  "vulnerabilityRating": "6.6",
+                  "description": "A hostile party could impersonate the client site and impersonate the\nuser’s session on this client. This could be achieved using DNS or\nARP spoofing. This applies to clients, which are web applications;\nthus, the redirect URI is not local to the host where the user’s\nbrowser is running.\nImpact: An attacker who intercepts the authorization \"code\" as it is\nsent by the browser to the callback endpoint can gain access to\nprotected resources by submitting the authorization \"code\" to the\nclient. The client will exchange the authorization \"code\" for an\naccess token and use the access token to access protected resources\nfor the benefit of the attacker, delivering protected resources to\nthe attacker, or modifying protected resources as directed by the\nattacker. If OAuth is used by the client to delegate authentication\nto a social site (e.g., as in the implementation of a \"Login\" button\non a third-party social network site), the attacker can use the\nintercepted authorization \"code\" to log into the client as the user.\n\nNote: Authenticating the client during authorization \"code\" exchange\nwill not help to detect such an attack, as it is the legitimate\nclient that obtains the tokens.",
+                  "mitigation": "Countermeasures:\no In order to prevent an attacker from impersonating the end-user’s\nsession, the redirect URI of the client should point to an HTTPS\nprotected endpoint, and the browser should be utilized to\nauthenticate this redirect URI using server authentication"
                 }
               ],
               "attrs": {
