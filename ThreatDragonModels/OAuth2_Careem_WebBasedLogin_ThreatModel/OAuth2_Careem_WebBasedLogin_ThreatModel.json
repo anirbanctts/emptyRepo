@@ -1602,6 +1602,21 @@
                   "attackPatternSummary": [
                     "In this attack pattern, the adversary monitors network traffic between nodes of a public or multicast network in an attempt to capture sensitive information at the protocol level. Network sniffing applications can reveal TCP/IP, DNS, Ethernet, and other low-level network communication information. The adversary takes a passive role in this attack pattern and simply observes and analyzes the traffic. The adversary may precipitate or indirectly influence the content of the observed transaction, but is never the intended recipient of the target information."
                   ]
+                },
+                {
+                  "status": "Open",
+                  "severity": "Medium",
+                  "deinitionSource": "cwebydev",
+                  "title": "Authorization Code - DoS Attacks That Exhaust Resources",
+                  "description": "If an authorization server includes a nontrivial amount of entropy in\nauthorization \"codes\" or access tokens (limiting the number of\npossible codes/tokens) and automatically grants either without user\nintervention and has no limit on codes or access tokens per user, an\nattacker could exhaust the pool of authorization \"codes\" by\nrepeatedly directing the user’s browser to request authorization\n\"codes\" or access tokens.",
+                  "vulnerabilityRating": "6.7",
+                  "type": "Resource Management Errors",
+                  "subtype": "400 - Uncontrolled Resource Consumption ('Resource Exhaustion')",
+                  "subCategorySummary": "The software does not properly restrict the size or amount of resources that are requested or influenced by an actor, which can be used to consume more resources than intended.",
+                  "attackPattern": "125 - Flooding",
+                  "attackPatternSummary": [
+                    "An adversary consumes the resources of a target by rapidly engaging in a large number of interactions with the target. This type of attack generally exposes a weakness in rate limiting or flow. When successful this attack prevents legitimate users from accessing the service and can cause the target to crash. This attack differs from resource depletion through leaks or allocations in that the latter attacks do not rely on the volume of requests made to the target but instead focus on manipulation of the target's operations. The key factor in a flooding attack is the number of requests the adversary can make in a given period of time. The greater this number, the more likely an attack is to succeed against a given target."
+                  ]
                 }
               ],
               "attrs": {
