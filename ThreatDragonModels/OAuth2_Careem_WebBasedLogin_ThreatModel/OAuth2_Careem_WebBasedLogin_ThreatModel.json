@@ -1795,6 +1795,16 @@
                   "vulnerabilityRating": "8.2",
                   "description": "An attacker could attempt to replay valid requests in order to obtain\nor to modify/destroy user data.",
                   "mitigation": "Countermeasures:\no The resource server should utilize transport security measures\n(e.g., TLS) in order to prevent such attacks.\nThis would prevent the attacker from capturing valid requests.\no Alternatively, the resource server could employ signed requests  along with nonces and timestamps in order to\nuniquely identify requests. The resource server should detect and\nrefuse every replayed request."
+                },
+                {
+                  "status": "Open",
+                  "severity": "High",
+                  "deinitionSource": "other",
+                  "title": "Protected Resources - Guessing Access Tokens",
+                  "type": "Guess handle token based on prior knowledge",
+                  "vulnerabilityRating": "8.5",
+                  "description": "Where the token is a handle, the attacker may attempt to guess the\naccess token values based on knowledge they have from other access\ntokens.\nImpact: Access to a single user’s detail",
+                  "mitigation": "Countermeasures:\no Handle tokens should have a reasonable level of entropy in order to make guessing a valid token value not feasible.\no Assertion (or self-contained token) token contents should be\nprotected by a digital signature.\no Security can be further strengthened by using a short access token\nduration"
                 }
               ],
               "attrs": {
@@ -1855,6 +1865,22 @@
                   "vulnerabilityRating": "8.5",
                   "description": "An attacker could try to obtain a valid access token on transport between the client and resource server. As access tokens are shared secrets between the authorization server and resource server, they should be treated with the same care as other credentials (e.g., end user passwords)",
                   "mitigation": "Countermeasures:\no Access tokens sent as bearer tokens should not be sent in the\nclear over an insecure channel. As per the core OAuth spec,\ntransmission of access tokens must be protected using transportlayer\nmechanisms such as TLS.\no A short lifetime reduces impact in case tokens are compromised.\no The access token can be bound to a client’s identifier and require\nthe client to prove legitimate ownership of the token to the\nresource server"
+                },
+                {
+                  "status": "Open",
+                  "severity": "High",
+                  "deinitionSource": "allcwe",
+                  "title": "Protected Resources - Access Token Phishing by Counterfeit Resource Server",
+                  "description": "An attacker may pretend to be a particular resource server and to\naccept tokens from a particular authorization server. If the client\nsends a valid access token to this counterfeit resource server, the\nserver in turn may use that token to access other services on behalf\nof the resource owner.",
+                  "mitigation": "Countermeasures:\no Clients should not make authenticated requests with an access\ntoken to unfamiliar resource servers, regardless of the presence\nof a secure channel. If the resource server URL is well-known to\nthe client, it may authenticate the resource servers.\no Associate the endpoint URL of the resource server the client\ntalked to with the access token (e.g., in an audience field) and\nvalidate the association at a legitimate resource server. The\nendpoint URL validation policy may be strict (exact match) or more\nrelaxed (e.g., same host). This would require telling the\nauthorization server about the resource server endpoint URL in the\nauthorization process.\no Associate an access token with a client and authenticate the\nclient with resource server requests (typically via a signature,\nin order to not disclose a secret to a potential attacker). This\nprevents the attack because the counterfeit server is assumed to\nlack the capability to correctly authenticate on behalf of the\nlegitimate client to the resource server.\no Restrict the token scope and/or limit the token to a certain resource server",
+                  "vulnerabilityRating": "8.5",
+                  "type": "All",
+                  "subtype": "601 - URL Redirection to Untrusted Site ('Open Redirect')",
+                  "subCategorySummary": "A web application accepts a user-controlled input that specifies a link to an external site, and uses that link in a Redirect. This simplifies phishing attacks.",
+                  "attackPattern": "98 - Phishing",
+                  "attackPatternSummary": [
+                    "Phishing is a social engineering technique where an attacker masquerades as a legitimate entity with which the victim might do business in order to prompt the user to reveal some confidential information (very frequently authentication credentials) that can later be used by an attacker. Phishing is essentially a form of information gathering or \"fishing\" for information."
+                  ]
                 }
               ],
               "attrs": {
