@@ -190,7 +190,7 @@
                   "severity": "Critical",
                   "deinitionSource": "cwebydev",
                   "title": "End-User Credentials Phished Using Compromised or Embedded Browser",
-                  "type": "User Interface Security Issues",
+                  "type": "All",
                   "subtype": "451 - User Interface (UI) Misrepresentation of Critical Information",
                   "subCategorySummary": "The user interface (UI) does not properly represent critical information to the user, allowing the information - or its source - to be obscured or spoofed. This is often a component in phishing attacks.",
                   "vulnerabilityRating": "9.5",
@@ -221,7 +221,7 @@
                   "attackPatternSummary": [
                     "In a clickjacking attack the victim is tricked into unknowingly initiating some action in one system while interacting with the UI from a seemingly completely different system. While being logged in to some target system, the victim visits the adversary's malicious site which displays a UI that the victim wishes to interact with. In reality, the clickjacked page has a transparent layer above the visible UI with action controls that the adversary wishes the victim to execute. The victim clicks on buttons or other UI elements they see on the page which actually triggers the action controls in the transparent overlaying layer. Depending on what that action control is, the adversary may have just tricked the victim into executing some potentially privileged (and most certainly undesired) functionality in the target system to which the victim is authenticated. The basic problem here is that there is a dichotomy between what the victim thinks they are clicking on versus what they are actually clicking on."
                   ],
-                  "type": "Web Problems",
+                  "type": "All",
                   "subtype": "1021 - Improper Restriction of Rendered UI Layers or Frames",
                   "subCategorySummary": "The web application does not restrict or incorrectly restricts frame objects or UI layers that belong to another application or domain, which can lead to user confusion about which interface the user is interacting with."
                 }
@@ -1610,7 +1610,7 @@
                   "title": "Authorization Code - DoS Attacks That Exhaust Resources",
                   "description": "If an authorization server includes a nontrivial amount of entropy in\nauthorization \"codes\" or access tokens (limiting the number of\npossible codes/tokens) and automatically grants either without user\nintervention and has no limit on codes or access tokens per user, an\nattacker could exhaust the pool of authorization \"codes\" by\nrepeatedly directing the user’s browser to request authorization\n\"codes\" or access tokens.",
                   "vulnerabilityRating": "6.7",
-                  "type": "Resource Management Errors",
+                  "type": "All",
                   "subtype": "400 - Uncontrolled Resource Consumption ('Resource Exhaustion')",
                   "subCategorySummary": "The software does not properly restrict the size or amount of resources that are requested or influenced by an actor, which can be used to consume more resources than intended.",
                   "attackPattern": "125 - Flooding",
@@ -1624,7 +1624,7 @@
                   "severity": "Medium",
                   "deinitionSource": "cwebydev",
                   "title": "Authorization Code - DoS Using Manufactured Authorization codes",
-                  "type": "Resource Management Errors",
+                  "type": "All",
                   "subtype": "400 - Uncontrolled Resource Consumption ('Resource Exhaustion')",
                   "subCategorySummary": "The software does not properly restrict the size or amount of resources that are requested or influenced by an actor, which can be used to consume more resources than intended.",
                   "attackPattern": "125 - Flooding",
