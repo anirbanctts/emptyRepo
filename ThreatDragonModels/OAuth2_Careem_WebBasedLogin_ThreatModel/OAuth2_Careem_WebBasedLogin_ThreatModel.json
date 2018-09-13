@@ -1541,6 +1541,22 @@
                   "vulnerabilityRating": "8.1",
                   "description": "Attackers may attempt to eavesdrop access tokens in transit from the\nauthorization server to the client.\nImpact: The attacker is able to access all resources with the\npermissions covered by the scope of the particular access token.",
                   "mitigation": "Countermeasures:\no As per the core OAuth spec, the authorization servers must ensure\nthat these transmissions are protected using transport-layer\nmechanisms such as TLS.\no If end-to-end confidentiality cannot be guaranteed, reducing scope and expiry time for access\ntokens can be used to reduce the damage in case of leaks."
+                },
+                {
+                  "status": "Open",
+                  "severity": "High",
+                  "deinitionSource": "cwe",
+                  "title": "Eavesdropping Refresh Tokens from Authorization Server",
+                  "type": "Authorize Actors",
+                  "subtype": "300 - Channel Accessible by Non-Endpoint ('Man-in-the-Middle')",
+                  "subCategorySummary": "The product does not adequately verify the identity of actors at both ends of a communication channel, or does not adequately ensure the integrity of the channel, in a way that allows the channel to be accessed or influenced by an actor that is not an endpoint.",
+                  "attackPattern": "651 - Eavesdropping",
+                  "attackPatternSummary": [
+                    "An adversary intercepts a form of communication (e.g. text, audio, video) by way of software (e.g., microphone and audio recording application), hardware (e.g., recording equipment), or physical means (e.g., physical proximity). The goal of eavesdropping is typically to gain unauthorized access to sensitive information about the target for financial, personal, political, or other gains. Eavesdropping is different from a sniffing attack as it does not take place on a network-based communication channel (e.g., IP traffic). Instead, it entails listening in on the raw audio source of a conversation between two or more parties."
+                  ],
+                  "vulnerabilityRating": "8.1",
+                  "description": "An attacker may eavesdrop refresh tokens when they are transmitted\nfrom the authorization server to the client.",
+                  "mitigation": "Countermeasures:\no As per the core OAuth spec, the authorization servers must ensure that these transmissions are protected using transport-layer mechanisms such as TLS.\no If end-to-end confidentiality cannot be guaranteed, reducing scope and expiry time for\nissued access tokens can be used to reduce the damage in case of leaks."
                 }
               ],
               "attrs": {
