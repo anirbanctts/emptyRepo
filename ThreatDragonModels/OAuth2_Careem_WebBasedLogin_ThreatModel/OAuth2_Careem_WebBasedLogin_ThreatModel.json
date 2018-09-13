@@ -104,7 +104,7 @@
                 {
                   "status": "Open",
                   "severity": "Medium",
-                  "deinitionSource": "cwebydev",
+                  "deinitionSource": "allcwe",
                   "mitigation": "Countermeasures:\no As per the core OAuth spec, the authorization server as well as\nthe client must ensure that these transmissions are protected\nusing transport-layer mechanisms such as TLS.\no The authorization server will require the client to authenticate\nwherever possible, so the binding of the authorization code to a\ncertain client can be validated in a reliable way.\no Use short expiry time for authorization codes.\no The authorization server should enforce a one-time usage\nrestriction\no If an authorization server observes multiple attempts to redeem an\nauthorization code, the authorization server may want to revoke\nall tokens granted based on the authorization code.\no In the absence of these countermeasures, reducing scope and expiry time for access\ntokens can be used to reduce the damage in case of leaks.\no The client server may reload the target page of the redirect URI\nin order to automatically clean up the browser cache.",
                   "description": "Authorization \"codes\" are passed via the browser, which may\nunintentionally leak those codes to untrusted web sites and attackers\nin different ways:\no Referrer headers: Browsers frequently pass a \"referer\" header when\na web page embeds content, or when a user travels from one web\npage to another web page. These referrer headers may be sent even\nwhen the origin site does not trust the destination site. The\nreferrer header is commonly logged for traffic analysis purposes.\no Request logs: Web server request logs commonly include query\nparameters on requests.\no Open redirectors: Web sites sometimes need to send users to\nanother destination via a redirector. Open redirectors pose a\nparticular risk to web-based delegation protocols because the\nredirector can leak verification codes to untrusted destination\nsites.\no Browser history: Web browsers commonly record visited URLs in the\nbrowser history. Another user of the same web browser may be able\nto view URLs that were visited by previous users.",
                   "vulnerabilityRating": "6.7",
@@ -144,7 +144,7 @@
                 {
                   "status": "Open",
                   "severity": "High",
-                  "deinitionSource": "cwebydev",
+                  "deinitionSource": "allcwe",
                   "title": "Authorization Code - CSRF Attack against redirect-uri",
                   "type": "All",
                   "subtype": "352 - Cross-Site Request Forgery (CSRF)",
@@ -188,7 +188,7 @@
                 {
                   "status": "Open",
                   "severity": "Critical",
-                  "deinitionSource": "cwebydev",
+                  "deinitionSource": "allcwe",
                   "title": "End-User Credentials Phished Using Compromised or Embedded Browser",
                   "type": "All",
                   "subtype": "451 - User Interface (UI) Misrepresentation of Critical Information",
@@ -212,7 +212,7 @@
                 {
                   "status": "Open",
                   "severity": "High",
-                  "deinitionSource": "cwebydev",
+                  "deinitionSource": "allcwe",
                   "title": "Clickjacking Attack against Authorization",
                   "mitigation": "Countermeasures:\no For newer browsers, avoidance of iFrames during authorization can be enforced on the server side by using the X-FRAME-OPTIONS header.\no For older browsers, JavaScript frame-busting techniques can be used but may not be effective in all browsers",
                   "description": "With clickjacking, a malicious site loads the target site in a\ntransparent iFrame overlaid on top of a set of dummy\nbuttons that are carefully constructed to be placed directly under\nimportant buttons on the target site. When a user clicks a visible\nbutton, they are actually clicking a button (such as an \"Authorize\"\nbutton) on the hidden page.\nImpact: An attacker can steal a user’s authentication credentials and\naccess their resources.",
@@ -1606,7 +1606,7 @@
                 {
                   "status": "Open",
                   "severity": "Medium",
-                  "deinitionSource": "cwebydev",
+                  "deinitionSource": "allcwe",
                   "title": "Authorization Code - DoS Attacks That Exhaust Resources",
                   "description": "If an authorization server includes a nontrivial amount of entropy in\nauthorization \"codes\" or access tokens (limiting the number of\npossible codes/tokens) and automatically grants either without user\nintervention and has no limit on codes or access tokens per user, an\nattacker could exhaust the pool of authorization \"codes\" by\nrepeatedly directing the user’s browser to request authorization\n\"codes\" or access tokens.",
                   "vulnerabilityRating": "6.7",
@@ -1622,7 +1622,7 @@
                 {
                   "status": "Open",
                   "severity": "Medium",
-                  "deinitionSource": "cwebydev",
+                  "deinitionSource": "allcwe",
                   "title": "Authorization Code - DoS Using Manufactured Authorization codes",
                   "type": "All",
                   "subtype": "400 - Uncontrolled Resource Consumption ('Resource Exhaustion')",
