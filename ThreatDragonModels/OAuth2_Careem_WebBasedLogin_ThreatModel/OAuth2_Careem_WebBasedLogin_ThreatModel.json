@@ -403,6 +403,38 @@
                   ],
                   "mitigation": "Countermeasures:\nAuthorization servers should decide, based on an analysis of the risk\nassociated with this threat, whether to detect and prevent this\nthreat.\nIn order to prevent such an attack, the authorization server may\nforce a user interaction based on non-predictable input values as\npart of the user consent approval. The authorization server could\no combine password authentication and user consent in a single form,\no make use of CAPTCHAs, or\no use one-time secrets sent out of band to the resource owner (e.g.,\nvia text or instant message).\nAlternatively, in order to allow the resource owner to detect abuse,\nthe authorization server could notify the resource owner of any\napproval by appropriate means, e.g., text or instant message, or\nemail.",
                   "vulnerabilityRating": "7.8"
+                },
+                {
+                  "status": "Open",
+                  "severity": "High",
+                  "deinitionSource": "owasp",
+                  "title": "Refresh Token - Obtaining Refresh Token from Authorization Server Database - ByPass Access",
+                  "type": "OWASP Top Ten 2017 Category A5 - Broken Access Control",
+                  "subtype": "284 - Improper Access Control",
+                  "subCategorySummary": "The software does not restrict or incorrectly restricts access to a resource from an unauthorized actor.",
+                  "attackPattern": "180 - Exploiting Incorrectly Configured Access Control Security Levels",
+                  "attackPatternSummary": [
+                    "An attacker exploits a weakness in the configuration of access controls and is able to bypass the intended protection that these measures guard against and thereby obtain unauthorized access to the system or network. Sensitive functionality should always be protected with access controls. However configuring all but the most trivial access control systems can be very complicated and there are many opportunities for mistakes. If an attacker can learn of incorrectly configured access security settings, they may be able to exploit this in an attack. Most commonly, attackers would take advantage of controls that provided too little protection for sensitive activities in order to perform actions that should be denied to them. In some circumstances, an attacker may be able to take advantage of overly restrictive access control policies, initiating denial of services (if an application locks because it unexpectedly failed to be granted access) or causing other legitimate actions to fail due to security. The latter class of attacks, however, is usually less severe and easier to detect than attacks based on inadequate security restrictions. This attack pattern differs from CAPEC 1, \"Accessing Functionality Not Properly Constrained by ACLs\" in that the latter describes attacks where sensitive functionality lacks access controls, where, in this pattern, the access control is present, but incorrectly configured."
+                  ],
+                  "vulnerabilityRating": "8.1",
+                  "description": "This threat is applicable if the authorization server stores refresh tokens as handles in a database. An attacker may obtain refresh tokens from the authorization server’s database by gaining access to the database\n\nImpact: Disclosure of all refresh tokens.",
+                  "mitigation": "Countermeasures:\no Enforce credential storage protection best practices.\no Bind token to client id, if the attacker cannot obtain the\nrequired id and secret"
+                },
+                {
+                  "status": "Open",
+                  "severity": "High",
+                  "deinitionSource": "cwe",
+                  "title": "Refresh Token - Obtaining Refresh Token from Authorization Server Database - SQL Injection",
+                  "type": "Validate Inputs",
+                  "subtype": "75 - Failure to Sanitize Special Elements into a Different Plane (Special Element Injection)",
+                  "subCategorySummary": "The software does not adequately filter user-controlled input for special elements with control implications.",
+                  "attackPattern": "66 - SQL Injection",
+                  "attackPatternSummary": [
+                    "This attack exploits target software that constructs SQL statements based on user input. An attacker crafts input strings so that when the target software constructs SQL statements based on the input, the resulting SQL statement performs actions other than those the application intended. SQL Injection results from failure of the application to appropriately validate input. When specially crafted user-controlled input consisting of SQL syntax is used without proper validation as part of SQL queries, it is possible to glean information from the database in ways not envisaged during application design. Depending upon the database and the design of the application, it may also be possible to leverage injection to have the database execute system-related commands of the attackers' choice. SQL Injection enables an attacker to talk directly to the database, thus bypassing the application completely. Successful injection can cause information disclosure as well as ability to add or modify data in the database. In order to successfully inject SQL and retrieve information from a database, an attacker:"
+                  ],
+                  "mitigation": "Countermeasures:\no Enforce credential storage protection best practices.\no Bind token to client id, if the attacker cannot obtain the\nrequired id and secret",
+                  "description": "This threat is applicable if the authorization server stores refresh\ntokens as handles in a database. An attacker may obtain refresh\ntokens from the authorization server’s database by launching a SQL injection attack.\nImpact: Disclosure of all refresh tokens.",
+                  "vulnerabilityRating": "8.1"
                 }
               ],
               "attrs": {
