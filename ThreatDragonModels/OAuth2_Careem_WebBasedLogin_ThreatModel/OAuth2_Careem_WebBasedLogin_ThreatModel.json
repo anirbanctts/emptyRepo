@@ -1778,16 +1778,34 @@
               "angle": 0,
               "id": "eb7bdd97-79eb-4870-8fe2-c069a94c3882",
               "z": 35,
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
+              "threats": [
+                {
+                  "status": "Open",
+                  "severity": "High",
+                  "deinitionSource": "allcwe",
+                  "title": "Protected Resources - Replay of Authorized Resource Server Requests",
+                  "type": "All",
+                  "subtype": "294 - Authentication Bypass by Capture-replay",
+                  "subCategorySummary": "A capture-replay flaw exists when the design of the software makes it possible for a malicious user to sniff network traffic and bypass authentication by replaying it to the server in question to the same effect as the original message (or with minor changes).",
+                  "attackPattern": "158 - Sniffing Network Traffic",
+                  "attackPatternSummary": [
+                    "In this attack pattern, the adversary monitors network traffic between nodes of a public or multicast network in an attempt to capture sensitive information at the protocol level. Network sniffing applications can reveal TCP/IP, DNS, Ethernet, and other low-level network communication information. The adversary takes a passive role in this attack pattern and simply observes and analyzes the traffic. The adversary may precipitate or indirectly influence the content of the observed transaction, but is never the intended recipient of the target information."
+                  ],
+                  "vulnerabilityRating": "8.2",
+                  "description": "An attacker could attempt to replay valid requests in order to obtain\nor to modify/destroy user data.",
+                  "mitigation": "Countermeasures:\no The resource server should utilize transport security measures\n(e.g., TLS) in order to prevent such attacks.\nThis would prevent the attacker from capturing valid requests.\no Alternatively, the resource server could employ signed requests  along with nonces and timestamps in order to\nuniquely identify requests. The resource server should detect and\nrefuse every replayed request."
+                }
+              ],
               "attrs": {
                 ".element-shape": {
-                  "class": "element-shape hasNoOpenThreats isInScope"
+                  "class": "element-shape hasOpenThreats isInScope"
                 },
                 "text": {
                   "text": "Resource\nServer"
                 },
                 ".element-text": {
-                  "class": "element-text hasNoOpenThreats isInScope"
+                  "class": "element-text hasOpenThreats isInScope"
                 }
               }
             },
@@ -1820,13 +1838,31 @@
                 }
               ],
               "z": 36,
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
+              "threats": [
+                {
+                  "status": "Open",
+                  "severity": "High",
+                  "deinitionSource": "cwe",
+                  "title": "Protected Resources - Eavesdropping Access Tokens on Transport",
+                  "type": "Authorize Actors",
+                  "subtype": "300 - Channel Accessible by Non-Endpoint ('Man-in-the-Middle')",
+                  "subCategorySummary": "The product does not adequately verify the identity of actors at both ends of a communication channel, or does not adequately ensure the integrity of the channel, in a way that allows the channel to be accessed or influenced by an actor that is not an endpoint.",
+                  "attackPattern": "651 - Eavesdropping",
+                  "attackPatternSummary": [
+                    "An adversary intercepts a form of communication (e.g. text, audio, video) by way of software (e.g., microphone and audio recording application), hardware (e.g., recording equipment), or physical means (e.g., physical proximity). The goal of eavesdropping is typically to gain unauthorized access to sensitive information about the target for financial, personal, political, or other gains. Eavesdropping is different from a sniffing attack as it does not take place on a network-based communication channel (e.g., IP traffic). Instead, it entails listening in on the raw audio source of a conversation between two or more parties."
+                  ],
+                  "vulnerabilityRating": "8.5",
+                  "description": "An attacker could try to obtain a valid access token on transport between the client and resource server. As access tokens are shared secrets between the authorization server and resource server, they should be treated with the same care as other credentials (e.g., end user passwords)",
+                  "mitigation": "Countermeasures:\no Access tokens sent as bearer tokens should not be sent in the\nclear over an insecure channel. As per the core OAuth spec,\ntransmission of access tokens must be protected using transportlayer\nmechanisms such as TLS.\no A short lifetime reduces impact in case tokens are compromised.\no The access token can be bound to a client’s identifier and require\nthe client to prove legitimate ownership of the token to the\nresource server"
+                }
+              ],
               "attrs": {
                 ".marker-target": {
-                  "class": "marker-target hasNoOpenThreats isInScope"
+                  "class": "marker-target hasOpenThreats isInScope"
                 },
                 ".connection": {
-                  "class": "connection hasNoOpenThreats isInScope"
+                  "class": "connection hasOpenThreats isInScope"
                 }
               }
             }
