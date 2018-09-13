@@ -1805,6 +1805,16 @@
                   "vulnerabilityRating": "8.5",
                   "description": "Where the token is a handle, the attacker may attempt to guess the\naccess token values based on knowledge they have from other access\ntokens.\nImpact: Access to a single user’s detail",
                   "mitigation": "Countermeasures:\no Handle tokens should have a reasonable level of entropy in order to make guessing a valid token value not feasible.\no Assertion (or self-contained token) token contents should be\nprotected by a digital signature.\no Security can be further strengthened by using a short access token\nduration"
+                },
+                {
+                  "status": "Open",
+                  "severity": "Medium",
+                  "deinitionSource": "other",
+                  "title": "Protected Resources - Abuse of Token by Legitimate Resource Server or Client",
+                  "type": "Abuse of Token by Legitimate Party",
+                  "vulnerabilityRating": "6.6",
+                  "description": "A legitimate resource server could attempt to use an access token to\naccess another resource server. Similarly, a client could try to use\na token obtained for one server on another resource server.",
+                  "mitigation": "Countermeasures:\no Tokens should be restricted to particular resource servers"
                 }
               ],
               "attrs": {
@@ -1830,14 +1840,17 @@
               },
               "vertices": [
                 {
-                  "x": 432,
-                  "y": 157
+                  "x": 456,
+                  "y": 156
                 }
               ],
               "id": "e74c7418-8922-4605-9ffa-d841467323c6",
               "labels": [
                 {
-                  "position": 0.5,
+                  "position": {
+                    "distance": 0.828679517016239,
+                    "offset": 14.017321746330708
+                  },
                   "attrs": {
                     "text": {
                       "text": "26. request for\nresource with token",
@@ -1891,6 +1904,27 @@
                   "class": "connection hasOpenThreats isInScope"
                 }
               }
+            },
+            {
+              "type": "tm.Boundary",
+              "smooth": true,
+              "source": {
+                "x": 696,
+                "y": 19
+              },
+              "target": {
+                "x": 744,
+                "y": 184
+              },
+              "vertices": [
+                {
+                  "x": 628,
+                  "y": 128
+                }
+              ],
+              "id": "824c0233-3ec3-4d84-8453-2c38726dac09",
+              "z": 37,
+              "attrs": {}
             }
           ]
         },
