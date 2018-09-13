@@ -1790,6 +1790,45 @@
                   "class": "element-text hasNoOpenThreats isInScope"
                 }
               }
+            },
+            {
+              "type": "tm.Flow",
+              "smooth": true,
+              "source": {
+                "id": "bb4de7b9-ffe5-4774-bc73-0591a6935f81"
+              },
+              "target": {
+                "id": "eb7bdd97-79eb-4870-8fe2-c069a94c3882"
+              },
+              "vertices": [
+                {
+                  "x": 432,
+                  "y": 157
+                }
+              ],
+              "id": "e74c7418-8922-4605-9ffa-d841467323c6",
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "26. request for\nresource with token",
+                      "font-weight": "400",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "z": 36,
+              "hasOpenThreats": false,
+              "attrs": {
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                },
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
+                }
+              }
             }
           ]
         },
