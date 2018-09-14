@@ -2082,6 +2082,54 @@
                   "description": "An open redirector is an endpoint using a parameter to automatically\nredirect a user agent to the location specified by the parameter\nvalue without any validation. If the authorization server allows the\nclient to register only part of the redirect URI, an attacker can use\nan open redirector operated by the client to construct a redirect URI\nthat will pass the authorization server validation but will send the\nauthorization \"code\" or access token to an endpoint under the control\nof the attacker.\nImpact: An attacker could gain access to authorization \"codes\" or\naccess tokens.",
                   "vulnerabilityRating": "8.7",
                   "mitigation": "Countermeasures:\no Require clients to register full redirect URI"
+                },
+                {
+                  "status": "Open",
+                  "severity": "Critical",
+                  "deinitionSource": "cwe",
+                  "title": "Resource Owner-s Password Grant: Client Obtains Scopes without End-User Authorization",
+                  "type": "Authorize Actors",
+                  "subtype": "285 - Improper Authorization",
+                  "subCategorySummary": "The software does not perform or incorrectly performs an authorization check when an actor attempts to access a resource or perform an action.",
+                  "attackPattern": "22 - Exploiting Trust in Client",
+                  "attackPatternSummary": [
+                    "An attack of this type exploits vulnerabilities in client/server communication channel authentication and data integrity. It leverages the implicit trust a server places in the client, or more importantly, that which the server believes is the client. An attacker executes this type of attack by placing themselves in the communication channel between client and server such that communication directly to the server is possible where the server believes it is communicating only with a valid client. There are numerous variations of this type of attack."
+                  ],
+                  "vulnerabilityRating": "9.0",
+                  "description": "All interaction with the resource owner is performed by the client.\nThus it might, intentionally or unintentionally, happen that the\nclient obtains a token with scope unknown for, or unintended by, the\nresource owner. For example, the resource owner might think the\nclient needs and acquires read-only access to its media storage only\nbut the client tries to acquire an access token with full access\npermissions.",
+                  "mitigation": "Countermeasures:\no Use other flows that do not rely on the client’s cooperation for\nresource owner interaction.\no The authorization server may generally restrict the scope of\naccess tokens issued by this flow. If the particular client is trustworthy and can be authenticated in a reliable way, the authorization server could relax that restriction. Resource owners may prescribe (e.g., in their preferences) what the maximum scope is for clients using this flow.\no The authorization server could notify the resource owner by an\nappropriate medium, e.g., email, of the grant issued"
+                },
+                {
+                  "status": "Open",
+                  "severity": "Critical",
+                  "deinitionSource": "cwe",
+                  "title": "Resource Owner-s Password Grant: Accidental Exposure of Passwords at Client Site",
+                  "type": "Encrypt Data",
+                  "subtype": "319 - Cleartext Transmission of Sensitive Information",
+                  "subCategorySummary": "The software transmits sensitive or security-critical data in cleartext in a communication channel that can be sniffed by unauthorized actors.",
+                  "attackPattern": "37 - Retrieve Embedded Sensitive Data",
+                  "attackPatternSummary": [
+                    "An attacker examines a target system to find sensitive data that has been embedded within it. This information can reveal confidential contents, such as account numbers or individual keys/credentials that can be used as an intermediate step in a larger attack."
+                  ],
+                  "vulnerabilityRating": "9.2",
+                  "description": "If the client does not provide enough protection, an attacker or\ndisgruntled employee could retrieve the passwords for a user.",
+                  "mitigation": "Countermeasures:\no Use other flows that do not rely on the client’s cooperation for\nsecure resource owner credential handling.\no Use digest authentication instead of plaintext credential processing.\no Obfuscate passwords in logs."
+                },
+                {
+                  "status": "Open",
+                  "severity": "High",
+                  "deinitionSource": "cwe",
+                  "title": "Resource Owner-s Password Grant: Client Obtains Refresh Token through Automatic Authorization",
+                  "type": "Authorize Actors",
+                  "subtype": "266 - Incorrect Privilege Assignment",
+                  "subCategorySummary": "A product incorrectly assigns a privilege to a particular actor, creating an unintended sphere of control for that actor.",
+                  "attackPattern": "22 - Exploiting Trust in Client",
+                  "attackPatternSummary": [
+                    "An attack of this type exploits vulnerabilities in client/server communication channel authentication and data integrity. It leverages the implicit trust a server places in the client, or more importantly, that which the server believes is the client. An attacker executes this type of attack by placing themselves in the communication channel between client and server such that communication directly to the server is possible where the server believes it is communicating only with a valid client. There are numerous variations of this type of attack."
+                  ],
+                  "vulnerabilityRating": "8.1",
+                  "description": "All interaction with the resource owner is performed by the client.\nThus it might, intentionally or unintentionally, happen that the\nclient obtains a long-term authorization represented by a refresh\ntoken even if the resource owner did not intend so.",
+                  "mitigation": "Countermeasures:\no Use other flows that do not rely on the client’s cooperation for\nresource owner interaction.\no The authorization server may generally refuse to issue refresh\ntokens in this flow.  If the particular\nclient is trustworthy and can be authenticated in a reliable way, the authorization server could relax that restriction. Resource owners may allow or deny (e.g., in\ntheir preferences) the issuing of refresh tokens using this flow\nas well.\no The authorization server could notify the resource owner by an\nappropriate medium, e.g., email, of the refresh token issued"
                 }
               ],
               "attrs": {
