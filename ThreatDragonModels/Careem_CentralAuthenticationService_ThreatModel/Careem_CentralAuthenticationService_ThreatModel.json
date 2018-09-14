@@ -2047,6 +2047,16 @@
                   "description": "The host device (e.g., mobile phone) may be stolen. In that case,\nthe attacker gets access to all applications under the identity of\nthe legitimate user.",
                   "vulnerabilityRating": "6.8",
                   "mitigation": "Countermeasures:\no Utilize device lock to prevent unauthorized device access.\no Where a user knows the device has been stolen, they can revoke the\naffected tokens"
+                },
+                {
+                  "status": "Open",
+                  "severity": "Medium",
+                  "deinitionSource": "other",
+                  "title": "Client - Clone Device",
+                  "type": "Clone device",
+                  "vulnerabilityRating": "6.8",
+                  "description": "All device data and applications are copied to another device.\nApplications are used as-is on the target device.",
+                  "mitigation": "Countermeasures:\no Utilize device lock to prevent unauthorized device access\no Combine refresh token request with device identification\no Refresh token rotation\no Where a user knows the device has been cloned, they can use\nrefresh token revocation"
                 }
               ],
               "attrs": {
