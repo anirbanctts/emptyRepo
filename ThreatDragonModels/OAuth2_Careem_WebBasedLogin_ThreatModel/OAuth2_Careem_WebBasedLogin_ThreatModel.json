@@ -2516,11 +2516,54 @@
                   "class": "connection hasNoOpenThreats isInScope"
                 }
               }
+            },
+            {
+              "type": "tm.Flow",
+              "smooth": true,
+              "source": {
+                "id": "72e504d3-7374-4488-a70d-dfa20fc27edc"
+              },
+              "target": {
+                "id": "e7130819-d883-48be-954b-10c66b6ad08b"
+              },
+              "vertices": [
+                {
+                  "x": 264,
+                  "y": 556
+                },
+                {
+                  "x": 522,
+                  "y": 561
+                }
+              ],
+              "id": "1e4e0b0f-b05a-4b68-8a8e-702bad02bc14",
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "12. validate token",
+                      "font-weight": "400",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "z": 19,
+              "hasOpenThreats": false,
+              "attrs": {
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                },
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
+                }
+              }
             }
           ]
         },
         "size": {
-          "height": 590,
+          "height": 685,
           "width": 1092
         }
       }
