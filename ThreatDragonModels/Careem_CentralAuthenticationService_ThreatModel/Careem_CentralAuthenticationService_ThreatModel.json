@@ -37,7 +37,7 @@
                   "vulnerabilityRating": "6.8",
                   "description": "This applies for all client types. For open source projects, secrets\n can be extracted directly from source code in their public\n repositories. Secrets can be extracted from application binaries\n just as easily when the published source is not available to the\n attacker. Even if an application takes significant measures to\n obfuscate secrets in their application distribution, one should\n consider that the secret can still be reverse-engineered by anyone\n with access to a complete functioning application bundle or binary.",
                   "title": "Obtaining client secret from source code or Binary",
-                  "mitigation": "Countermeasures:\n o Don’t issue secrets to public clients or clients with\n inappropriate security policy.\n o Require user consent for public clients.\n o Use deployment-specific client secrets.\n o Revoke client secrets.",
+                  "mitigation": "Countermeasures:\n o Don’t issue secrets to public clients or clients with\n inappropriate security policy (Section 5.2.3.1).\n o Require user consent for public clients (Section 5.2.3.2).\n o Use deployment-specific client secrets (Section 5.2.3.4).\n o Revoke client secrets (Section 5.2.3.6).",
                   "attackPatternType": "Collect and Analyze Information",
                   "attackPattern": "188 - Reverse Engineering",
                   "attackPatternSummary": [
@@ -1990,16 +1990,74 @@
               "angle": 0,
               "id": "72e504d3-7374-4488-a70d-dfa20fc27edc",
               "z": 2,
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
+              "threats": [
+                {
+                  "status": "Open",
+                  "severity": "Medium",
+                  "deinitionSource": "owasp",
+                  "title": "Client - Obtaining client secret from source code or Binary",
+                  "type": "OWASP Top Ten 2017 Category A3 - Sensitive Data Exposure",
+                  "subtype": "312 - Cleartext Storage of Sensitive Information",
+                  "subCategorySummary": "The application stores sensitive information in cleartext within a resource that might be accessible to another control sphere.",
+                  "attackPattern": "188 - Reverse Engineering",
+                  "attackPatternSummary": [
+                    "An adversary discovers the structure, function, and composition of an object, resource, or system by using a variety of analysis techniques to effectively determine how the analyzed entity was constructed or operates. The goal of reverse engineering is often to duplicate the function, or a part of the function, of an object in order to duplicate or \"back engineer\" some aspect of its functioning. Reverse engineering techniques can be applied to mechanical objects, electronic devices, or software, although the methodology and techniques involved in each type of analysis differ widely."
+                  ],
+                  "vulnerabilityRating": "6.8",
+                  "description": "This applies for all client types. For open source projects, secrets\n can be extracted directly from source code in their public\n repositories. Secrets can be extracted from application binaries\n just as easily when the published source is not available to the\n attacker. Even if an application takes significant measures to\n obfuscate secrets in their application distribution, one should\n consider that the secret can still be reverse-engineered by anyone\n with access to a complete functioning application bundle or binary.",
+                  "mitigation": "Countermeasures:\n o Don’t issue secrets to public clients or clients with\n inappropriate security policy.\n o Require user consent for public clients.\n o Use deployment-specific client secrets.\n o Revoke client secrets."
+                },
+                {
+                  "status": "Open",
+                  "severity": "Medium",
+                  "deinitionSource": "other",
+                  "title": "Client - Obtain a Deployment-Specific Secret",
+                  "type": "An attacker may try to obtain the secret from a client installation.",
+                  "attackPattern": "116 - Excavation",
+                  "attackPatternSummary": [
+                    "An adversary actively probes the target in a manner that is designed to solicit information that could be leveraged for malicious purposes. This is achieved by exploring the target via ordinary interactions for the purpose of gathering intelligence about the target, or by sending data that is syntactically invalid or non-standard in an attempt to produce a response that contains the desired data. As a result of these interactions, the adversary is able to obtain information from the target that aids the attacker in making inferences about its security, configuration, or potential vulnerabilities. Examplar exchanges with the target may trigger unhandled exceptions or verbose error messages that reveal information like stack traces, configuration information, path information, or database design. This type of attack also includes the manipulation of query strings in a URI to produce invalid SQL queries, or by trying alternative path values in the hope that the server will return useful information."
+                  ],
+                  "vulnerabilityRating": "6.8",
+                  "description": "An attacker may try to obtain the secret from a client installation,\neither from a web site (web server) or a particular device (native\napplication)",
+                  "mitigation": "Plan--------\n1. Web server: Apply standard web server protection measures (for\nconfig files and databases)\n2. Native applications: Store secrets in secure local storage\n3. Revoke client secrets"
+                },
+                {
+                  "status": "Open",
+                  "severity": "Medium",
+                  "deinitionSource": "cwe",
+                  "title": "Client - Obtain Refresh Token from Native Clients",
+                  "type": "Authorize Actors",
+                  "subtype": "538 - File and Directory Information Exposure",
+                  "subCategorySummary": "The product stores sensitive information in files or directories that are accessible to actors outside of the intended control sphere.",
+                  "description": "On native clients, leakage of a refresh token typically affects a\nsingle user only.\nRead from local file system: The attacker could try to get file\nsystem access on the device and read the refresh tokens. The\nattacker could utilize a malicious application for that purpose.",
+                  "vulnerabilityRating": "6.8",
+                  "mitigation": "Countermeasures:\no Store secrets in secure storage.\no Utilize device lock to prevent unauthorized device access"
+                },
+                {
+                  "status": "Open",
+                  "severity": "Medium",
+                  "deinitionSource": "other",
+                  "title": "Client - Steal Device",
+                  "type": "Steal device",
+                  "attackPattern": "507 - Physical Theft",
+                  "attackPatternSummary": [
+                    "An adversary gains physical access to a system or device through theft of the item. Possession of a system or device enables a number of unique attacks to be executed and often provides the adversary with an extended timeframe for which to perform an attack. Most protections put in place to secure sensitive information can be defeated when an adversary has physical access and enough time."
+                  ],
+                  "description": "The host device (e.g., mobile phone) may be stolen. In that case,\nthe attacker gets access to all applications under the identity of\nthe legitimate user.",
+                  "vulnerabilityRating": "6.8",
+                  "mitigation": "Countermeasures:\no Utilize device lock to prevent unauthorized device access.\no Where a user knows the device has been stolen, they can revoke the\naffected tokens"
+                }
+              ],
               "attrs": {
                 ".element-shape": {
-                  "class": "element-shape hasNoOpenThreats isInScope"
+                  "class": "element-shape hasOpenThreats isInScope"
                 },
                 "text": {
                   "text": "Native App"
                 },
                 ".element-text": {
-                  "class": "element-text hasNoOpenThreats isInScope"
+                  "class": "element-text hasOpenThreats isInScope"
                 }
               }
             },
