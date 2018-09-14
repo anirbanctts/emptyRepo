@@ -2138,6 +2138,38 @@
                   "vulnerabilityRating": "8.7",
                   "description": "An attacker could use the end-user authorization endpoint and the\nredirect URI parameter to abuse the authorization server as an open\nredirector. An open redirector is an endpoint using a parameter to\nautomatically redirect a user agent to the location specified by the\nparameter value without any validation.\nImpact: An attacker could utilize a user’s trust in an authorization\nserver to launch a phishing attack.",
                   "mitigation": "Countermeasures:\no Require clients to register any full redirect URIs\no Don’t redirect to a redirect URI if the client identifier or\nredirect URI can’t be verified"
+                },
+                {
+                  "status": "Open",
+                  "severity": "Medium",
+                  "deinitionSource": "cwe",
+                  "title": "Token Endpoint - Obtaining Access Tokens and client id & secret from Authorization Server Database - SQL Injection",
+                  "type": "Validate Inputs",
+                  "subtype": "75 - Failure to Sanitize Special Elements into a Different Plane (Special Element Injection)",
+                  "subCategorySummary": "The software does not adequately filter user-controlled input for special elements with control implications.",
+                  "attackPattern": "66 - SQL Injection",
+                  "attackPatternSummary": [
+                    "This attack exploits target software that constructs SQL statements based on user input. An attacker crafts input strings so that when the target software constructs SQL statements based on the input, the resulting SQL statement performs actions other than those the application intended. SQL Injection results from failure of the application to appropriately validate input. When specially crafted user-controlled input consisting of SQL syntax is used without proper validation as part of SQL queries, it is possible to glean information from the database in ways not envisaged during application design. Depending upon the database and the design of the application, it may also be possible to leverage injection to have the database execute system-related commands of the attackers' choice. SQL Injection enables an attacker to talk directly to the database, thus bypassing the application completely. Successful injection can cause information disclosure as well as ability to add or modify data in the database. In order to successfully inject SQL and retrieve information from a database, an attacker:"
+                  ],
+                  "vulnerabilityRating": "6.8",
+                  "description": "This threat is applicable if the authorization server stores access\ntokens as handles in a database. An attacker may obtain access\ntokens or client secret from the authorization server’s database by launching a SQL injection attack.\n\nImpact: \nDisclosure of all access tokens.\nDisclosure of all client_id/secret combinations. This allows the attacker to act on behalf of legitimate clients.",
+                  "mitigation": "Countermeasures:\no Enforce standard SQL injection countermeasures"
+                },
+                {
+                  "status": "Open",
+                  "severity": "Medium",
+                  "deinitionSource": "owasp",
+                  "title": "Token Endpoint - Obtaining Access Tokens and Client Id & Secrets from Authorization Server Database - Unsecured Access",
+                  "type": "OWASP Top Ten 2017 Category A5 - Broken Access Control",
+                  "subtype": "284 - Improper Access Control",
+                  "subCategorySummary": "The software does not restrict or incorrectly restricts access to a resource from an unauthorized actor.",
+                  "attackPattern": "115 - Authentication Bypass",
+                  "attackPatternSummary": [
+                    "An attacker gains access to application, service, or device with the privileges of an authorized or privileged user by evading or circumventing an authentication mechanism. The attacker is therefore able to access protected data without authentication ever having taken place. This refers to an attacker gaining access equivalent to an authenticated user without ever going through an authentication procedure. This is usually the result of the attacker using an unexpected access procedure that does not go through the proper checkpoints where authentication should occur. For example, a web site might assume that all users will click through a given link in order to get to secure material and simply authenticate everyone that clicks the link. However, an attacker might be able to reach secured web content by explicitly entering the path to the content rather than clicking through the authentication link, thereby avoiding the check entirely. This attack pattern differs from other authentication attacks in that attacks of this pattern avoid authentication entirely, rather than faking authentication by exploiting flaws or by stealing credentials from legitimate users."
+                  ],
+                  "vulnerabilityRating": "6.9",
+                  "description": "For Access Token - This threat is applicable if the authorization server stores access tokens as handles in a database. An attacker may obtain access\ntokens from the authorization server’s database by gaining access to\nthe database\n\nFor Client Secret - An attacker may obtain valid client_id/secret combinations from the authorization server’s database by gaining access to the database.\n\nImpact: \nDisclosure of all access tokens.\nDisclosure of all client_id/secret combinations. This allows the attacker to act on behalf of legitimate clients.",
+                  "mitigation": "Countermeasures:\no Enforce system security measures\no Store access token hashes only or Enforce Credential Storage Protection Best Practices"
                 }
               ],
               "attrs": {
@@ -2207,13 +2239,31 @@
                 }
               ],
               "z": 5,
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
+              "threats": [
+                {
+                  "status": "Open",
+                  "severity": "High",
+                  "deinitionSource": "cwe",
+                  "title": "Token Endpoint - Eavesdropping Access Tokens",
+                  "type": "Authorize Actors",
+                  "subtype": "300 - Channel Accessible by Non-Endpoint ('Man-in-the-Middle')",
+                  "subCategorySummary": "The product does not adequately verify the identity of actors at both ends of a communication channel, or does not adequately ensure the integrity of the channel, in a way that allows the channel to be accessed or influenced by an actor that is not an endpoint.",
+                  "attackPattern": "158 - Sniffing Network Traffic",
+                  "attackPatternSummary": [
+                    "In this attack pattern, the adversary monitors network traffic between nodes of a public or multicast network in an attempt to capture sensitive information at the protocol level. Network sniffing applications can reveal TCP/IP, DNS, Ethernet, and other low-level network communication information. The adversary takes a passive role in this attack pattern and simply observes and analyzes the traffic. The adversary may precipitate or indirectly influence the content of the observed transaction, but is never the intended recipient of the target information."
+                  ],
+                  "vulnerabilityRating": "8.1",
+                  "description": "Attackers may attempt to eavesdrop access tokens in transit from the\nauthorization server to the client.\nImpact: The attacker is able to access all resources with the\npermissions covered by the scope of the particular access token.",
+                  "mitigation": "Countermeasures:\no As per the core OAuth spec, the authorization servers must ensure\nthat these transmissions are protected using transport-layer\nmechanisms such as TLS.\no If end-to-end confidentiality cannot be guaranteed, reducing scope and expiry time for access\ntokens can be used to reduce the damage in case of leaks."
+                }
+              ],
               "attrs": {
                 ".marker-target": {
-                  "class": "marker-target hasNoOpenThreats isInScope"
+                  "class": "marker-target hasOpenThreats isInScope"
                 },
                 ".connection": {
-                  "class": "connection hasNoOpenThreats isInScope"
+                  "class": "connection hasOpenThreats isInScope"
                 }
               }
             },
@@ -2500,6 +2550,22 @@
                   "vulnerabilityRating": "8.6",
                   "description": "OAuth makes no attempt to verify the authenticity of the\nauthorization server. A hostile party could take advantage of this\nby intercepting the client’s requests and returning misleading or\notherwise incorrect responses. This could be achieved using DNS or\nAddress Resolution Protocol (ARP) spoofing. Wide deployment of OAuth\nand similar protocols may cause users to become inured to the\npractice of being redirected to web sites where they are asked to\nenter their passwords. If users are not careful to verify the\nauthenticity of these web sites before entering their credentials, it\nwill be possible for attackers to exploit this practice to steal\nusers’ passwords.",
                   "mitigation": "Countermeasures:\no Authorization servers should consider such attacks when developing\nservices based on OAuth and should require the use of transportlayer\nsecurity for any requests where the authenticity of the\nauthorization server or of request responses is an issue.\no Authorization servers should attempt to educate users about the\nrisks posed by phishing attacks and should provide mechanisms that\nmake it easy for users to confirm the authenticity of their sites."
+                },
+                {
+                  "status": "Open",
+                  "severity": "High",
+                  "deinitionSource": "cwe",
+                  "title": "Token Endpoint - Disclosure of Client Credentials during Transmission",
+                  "type": "Authorize Actors",
+                  "subtype": "300 - Channel Accessible by Non-Endpoint ('Man-in-the-Middle')",
+                  "subCategorySummary": "The product does not adequately verify the identity of actors at both ends of a communication channel, or does not adequately ensure the integrity of the channel, in a way that allows the channel to be accessed or influenced by an actor that is not an endpoint.",
+                  "attackPattern": "158 - Sniffing Network Traffic",
+                  "attackPatternSummary": [
+                    "In this attack pattern, the adversary monitors network traffic between nodes of a public or multicast network in an attempt to capture sensitive information at the protocol level. Network sniffing applications can reveal TCP/IP, DNS, Ethernet, and other low-level network communication information. The adversary takes a passive role in this attack pattern and simply observes and analyzes the traffic. The adversary may precipitate or indirectly influence the content of the observed transaction, but is never the intended recipient of the target information."
+                  ],
+                  "vulnerabilityRating": "8.1",
+                  "description": "An attacker could attempt to eavesdrop the transmission of client\ncredentials between the client and server during the client\nauthentication process or during OAuth token requests.\nImpact: Revelation of a client credential enabling phishing or\nimpersonation of a client service.",
+                  "mitigation": "Countermeasures:\no The transmission of client credentials must be protected using\ntransport-layer mechanisms such as TLS.\no Use alternative authentication means that do not require the\nsending of plaintext credentials over the wire (e.g., Hash-based\nMessage Authentication Code)."
                 }
               ],
               "attrs": {
