@@ -2103,8 +2103,8 @@
                 "height": 100
               },
               "position": {
-                "x": 495,
-                "y": 146
+                "x": 496,
+                "y": 147
               },
               "angle": 0,
               "id": "adbb6f55-4b48-4a36-87d1-7f68e4a7b915",
@@ -2184,6 +2184,52 @@
                   "description": "An attacker may try to guess valid client_id/secret pairs.\nImpact: Disclosure of a single client_id/secret pair.",
                   "mitigation": "Countermeasures:\no Use high entropy for secrets.\no Lock accounts.\no Use strong client authentication.",
                   "vulnerabilityRating": "8.4"
+                },
+                {
+                  "status": "Open",
+                  "severity": "High",
+                  "deinitionSource": "owasp",
+                  "title": "Refresh Token - Obtaining Refresh Token from Authorization Server Database - ByPass Access",
+                  "type": "OWASP Top Ten 2017 Category A5 - Broken Access Control",
+                  "subtype": "284 - Improper Access Control",
+                  "subCategorySummary": "The software does not restrict or incorrectly restricts access to a resource from an unauthorized actor.",
+                  "attackPattern": "180 - Exploiting Incorrectly Configured Access Control Security Levels",
+                  "attackPatternSummary": [
+                    "An attacker exploits a weakness in the configuration of access controls and is able to bypass the intended protection that these measures guard against and thereby obtain unauthorized access to the system or network. Sensitive functionality should always be protected with access controls. However configuring all but the most trivial access control systems can be very complicated and there are many opportunities for mistakes. If an attacker can learn of incorrectly configured access security settings, they may be able to exploit this in an attack. Most commonly, attackers would take advantage of controls that provided too little protection for sensitive activities in order to perform actions that should be denied to them. In some circumstances, an attacker may be able to take advantage of overly restrictive access control policies, initiating denial of services (if an application locks because it unexpectedly failed to be granted access) or causing other legitimate actions to fail due to security. The latter class of attacks, however, is usually less severe and easier to detect than attacks based on inadequate security restrictions. This attack pattern differs from CAPEC 1, \"Accessing Functionality Not Properly Constrained by ACLs\" in that the latter describes attacks where sensitive functionality lacks access controls, where, in this pattern, the access control is present, but incorrectly configured."
+                  ],
+                  "vulnerabilityRating": "8.1",
+                  "description": "This threat is applicable if the authorization server stores refresh tokens as handles in a database. An attacker may obtain refresh tokens from the authorization server’s database by gaining access to the database\n\nImpact: Disclosure of all refresh tokens.",
+                  "mitigation": "Countermeasures:\no Enforce credential storage protection best practices.\no Bind token to client id, if the attacker cannot obtain the\nrequired id and secret"
+                },
+                {
+                  "status": "Open",
+                  "severity": "High",
+                  "deinitionSource": "cwe",
+                  "title": "Refresh Token - Obtaining Refresh Token from Authorization Server Database - SQL Injection",
+                  "type": "Validate Inputs",
+                  "subtype": "75 - Failure to Sanitize Special Elements into a Different Plane (Special Element Injection)",
+                  "subCategorySummary": "The software does not adequately filter user-controlled input for special elements with control implications.",
+                  "attackPattern": "66 - SQL Injection",
+                  "attackPatternSummary": [
+                    "This attack exploits target software that constructs SQL statements based on user input. An attacker crafts input strings so that when the target software constructs SQL statements based on the input, the resulting SQL statement performs actions other than those the application intended. SQL Injection results from failure of the application to appropriately validate input. When specially crafted user-controlled input consisting of SQL syntax is used without proper validation as part of SQL queries, it is possible to glean information from the database in ways not envisaged during application design. Depending upon the database and the design of the application, it may also be possible to leverage injection to have the database execute system-related commands of the attackers' choice. SQL Injection enables an attacker to talk directly to the database, thus bypassing the application completely. Successful injection can cause information disclosure as well as ability to add or modify data in the database. In order to successfully inject SQL and retrieve information from a database, an attacker:"
+                  ],
+                  "vulnerabilityRating": "8.1",
+                  "description": "This threat is applicable if the authorization server stores refresh\ntokens as handles in a database. An attacker may obtain refresh\ntokens from the authorization server’s database by launching a SQL injection attack.\nImpact: Disclosure of all refresh tokens.",
+                  "mitigation": "Countermeasures:\no Enforce credential storage protection best practices.\no Bind token to client id, if the attacker cannot obtain the\nrequired id and secret"
+                },
+                {
+                  "status": "Open",
+                  "severity": "High",
+                  "deinitionSource": "other",
+                  "title": "Refresh Token - Obtaining Refresh Token by Online Guessing",
+                  "type": "An attacker may try to guess refresh token",
+                  "attackPattern": "112 - Brute Force",
+                  "attackPatternSummary": [
+                    "In this attack, some asset (information, functionality, identity, etc.) is protected by a finite secret value. The attacker attempts to gain access to this asset by using trial-and-error to exhaustively explore all the possible secret values in the hope of finding the secret (or a value that is functionally equivalent) that will unlock the asset. Examples of secrets can include, but are not limited to, passwords, encryption keys, database lookup keys, and initial values to one-way functions. The key factor in this attack is the attackers' ability to explore the possible secret space rapidly. This, in turn, is a function of the size of the secret space and the computational power the attacker is able to bring to bear on the problem. If the attacker has modest resources and the secret space is large, the challenge facing the attacker is intractable. While the defender cannot control the resources available to an attacker, they can control the size of the secret space. Creating a large secret space involves selecting one's secret from as large a field of equally likely alternative secrets as possible and ensuring that an attacker is unable to reduce the size of this field using available clues or cryptanalysis. Doing this is more difficult than it sounds since elimination of patterns (which, in turn, would provide an attacker clues that would help them reduce the space of potential secrets) is difficult to do using deterministic machines, such as computers. Assuming a finite secret space, a brute force attack will eventually succeed. The defender must rely on making sure that the time and resources necessary to do so will exceed the value of the information. For example, a secret space that will likely take hundreds of years to explore is likely safe from raw-brute force attacks."
+                  ],
+                  "vulnerabilityRating": "8.1",
+                  "description": "An attacker may try to guess valid refresh token values and send it\nusing the grant type \"refresh_token\" in order to obtain a valid\naccess token.\nImpact: Exposure of a single refresh token and derivable access\ntokens.",
+                  "mitigation": "Countermeasures:\no Bind token to client id, because the attacker would guess the\nmatching client id, too.\no Authenticate the client; this adds another element that the\nattacker has to guess"
                 }
               ],
               "attrs": {
@@ -2270,6 +2316,22 @@
                   "vulnerabilityRating": "8.1",
                   "description": "Attackers may attempt to eavesdrop access tokens in transit from the\nauthorization server to the client.\nImpact: The attacker is able to access all resources with the\npermissions covered by the scope of the particular access token.",
                   "mitigation": "Countermeasures:\no As per the core OAuth spec, the authorization servers must ensure\nthat these transmissions are protected using transport-layer\nmechanisms such as TLS.\no If end-to-end confidentiality cannot be guaranteed, reducing scope and expiry time for access\ntokens can be used to reduce the damage in case of leaks."
+                },
+                {
+                  "status": "Open",
+                  "severity": "High",
+                  "deinitionSource": "cwe",
+                  "title": "Refresh Token -  Eavesdropping Refresh Tokens from Authorization Server",
+                  "type": "Authorize Actors",
+                  "subtype": "300 - Channel Accessible by Non-Endpoint ('Man-in-the-Middle')",
+                  "subCategorySummary": "The product does not adequately verify the identity of actors at both ends of a communication channel, or does not adequately ensure the integrity of the channel, in a way that allows the channel to be accessed or influenced by an actor that is not an endpoint.",
+                  "attackPattern": "651 - Eavesdropping",
+                  "attackPatternSummary": [
+                    "An adversary intercepts a form of communication (e.g. text, audio, video) by way of software (e.g., microphone and audio recording application), hardware (e.g., recording equipment), or physical means (e.g., physical proximity). The goal of eavesdropping is typically to gain unauthorized access to sensitive information about the target for financial, personal, political, or other gains. Eavesdropping is different from a sniffing attack as it does not take place on a network-based communication channel (e.g., IP traffic). Instead, it entails listening in on the raw audio source of a conversation between two or more parties."
+                  ],
+                  "vulnerabilityRating": "8.1",
+                  "description": "An attacker may eavesdrop refresh tokens when they are transmitted\nfrom the authorization server to the client.",
+                  "mitigation": "Countermeasures:\no As per the core OAuth spec, the authorization servers must ensure that these transmissions are protected using transport-layer mechanisms such as TLS.\no If end-to-end confidentiality cannot be guaranteed, reducing scope and expiry time for\nissued access tokens can be used to reduce the damage in case of leaks."
                 }
               ],
               "attrs": {
@@ -2580,6 +2642,22 @@
                   "vulnerabilityRating": "8.1",
                   "description": "An attacker could attempt to eavesdrop the transmission of client\ncredentials between the client and server during the client\nauthentication process or during OAuth token requests.\nImpact: Revelation of a client credential enabling phishing or\nimpersonation of a client service.",
                   "mitigation": "Countermeasures:\no The transmission of client credentials must be protected using\ntransport-layer mechanisms such as TLS.\no Use alternative authentication means that do not require the\nsending of plaintext credentials over the wire (e.g., Hash-based\nMessage Authentication Code)."
+                },
+                {
+                  "status": "Open",
+                  "severity": "High",
+                  "deinitionSource": "cwe",
+                  "title": "Refresh Token - Refresh Token Phishing by Counterfeit Authorization Server",
+                  "type": "Validate Inputs",
+                  "subtype": "601 - URL Redirection to Untrusted Site ('Open Redirect')",
+                  "subCategorySummary": "A web application accepts a user-controlled input that specifies a link to an external site, and uses that link in a Redirect. This simplifies phishing attacks.",
+                  "attackPattern": "98 - Phishing",
+                  "attackPatternSummary": [
+                    "Phishing is a social engineering technique where an attacker masquerades as a legitimate entity with which the victim might do business in order to prompt the user to reveal some confidential information (very frequently authentication credentials) that can later be used by an attacker. Phishing is essentially a form of information gathering or \"fishing\" for information."
+                  ],
+                  "description": "An attacker could try to obtain valid refresh tokens by proxying\nrequests to the authorization server. Given the assumption that the\nauthorization server URL is well-known at development time or can at\nleast be obtained from a well-known resource server, the attacker\nmust utilize some kind of spoofing in order to succeed.",
+                  "mitigation": "Countermeasures:\no Utilize server authentication",
+                  "vulnerabilityRating": "8.2"
                 }
               ],
               "attrs": {
@@ -2647,16 +2725,44 @@
               "angle": 0,
               "id": "e7130819-d883-48be-954b-10c66b6ad08b",
               "z": 15,
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
+              "threats": [
+                {
+                  "status": "Open",
+                  "severity": "High",
+                  "deinitionSource": "allcwe",
+                  "title": "Protected Resources - Replay of Authorized Resource Server Requests",
+                  "type": "All",
+                  "subtype": "294 - Authentication Bypass by Capture-replay",
+                  "subCategorySummary": "A capture-replay flaw exists when the design of the software makes it possible for a malicious user to sniff network traffic and bypass authentication by replaying it to the server in question to the same effect as the original message (or with minor changes).",
+                  "attackPattern": "158 - Sniffing Network Traffic",
+                  "attackPatternSummary": [
+                    "In this attack pattern, the adversary monitors network traffic between nodes of a public or multicast network in an attempt to capture sensitive information at the protocol level. Network sniffing applications can reveal TCP/IP, DNS, Ethernet, and other low-level network communication information. The adversary takes a passive role in this attack pattern and simply observes and analyzes the traffic. The adversary may precipitate or indirectly influence the content of the observed transaction, but is never the intended recipient of the target information."
+                  ],
+                  "vulnerabilityRating": "8.2",
+                  "description": "An attacker could attempt to replay valid requests in order to obtain\nor to modify/destroy user data.",
+                  "mitigation": "Countermeasures:\no The resource server should utilize transport security measures\n(e.g., TLS) in order to prevent such attacks.\nThis would prevent the attacker from capturing valid requests.\no Alternatively, the resource server could employ signed requests  along with nonces and timestamps in order to\nuniquely identify requests. The resource server should detect and\nrefuse every replayed request."
+                },
+                {
+                  "status": "Open",
+                  "severity": "High",
+                  "deinitionSource": "other",
+                  "title": "Protected Resources - Guessing Access Tokens",
+                  "type": "Guess handle token based on prior knowledge",
+                  "vulnerabilityRating": "8.5",
+                  "description": "Where the token is a handle, the attacker may attempt to guess the\naccess token values based on knowledge they have from other access\ntokens.\nImpact: Access to a single user’s detail",
+                  "mitigation": "Countermeasures:\no Handle tokens should have a reasonable level of entropy in order to make guessing a valid token value not feasible.\no Assertion (or self-contained token) token contents should be\nprotected by a digital signature.\no Security can be further strengthened by using a short access token\nduration"
+                }
+              ],
               "attrs": {
                 ".element-shape": {
-                  "class": "element-shape hasNoOpenThreats isInScope"
+                  "class": "element-shape hasOpenThreats isInScope"
                 },
                 "text": {
                   "text": "Resource\nServer"
                 },
                 ".element-text": {
-                  "class": "element-text hasNoOpenThreats isInScope"
+                  "class": "element-text hasOpenThreats isInScope"
                 }
               }
             },
@@ -2771,13 +2877,31 @@
                 }
               ],
               "z": 19,
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
+              "threats": [
+                {
+                  "status": "Open",
+                  "severity": "High",
+                  "deinitionSource": "cwe",
+                  "title": "Protected Resources - Eavesdropping Access Tokens on Transport",
+                  "type": "Authorize Actors",
+                  "subtype": "300 - Channel Accessible by Non-Endpoint ('Man-in-the-Middle')",
+                  "subCategorySummary": "The product does not adequately verify the identity of actors at both ends of a communication channel, or does not adequately ensure the integrity of the channel, in a way that allows the channel to be accessed or influenced by an actor that is not an endpoint.",
+                  "attackPattern": "651 - Eavesdropping",
+                  "attackPatternSummary": [
+                    "An adversary intercepts a form of communication (e.g. text, audio, video) by way of software (e.g., microphone and audio recording application), hardware (e.g., recording equipment), or physical means (e.g., physical proximity). The goal of eavesdropping is typically to gain unauthorized access to sensitive information about the target for financial, personal, political, or other gains. Eavesdropping is different from a sniffing attack as it does not take place on a network-based communication channel (e.g., IP traffic). Instead, it entails listening in on the raw audio source of a conversation between two or more parties."
+                  ],
+                  "vulnerabilityRating": "8.5",
+                  "description": "An attacker could try to obtain a valid access token on transport between the client and resource server. As access tokens are shared secrets between the authorization server and resource server, they should be treated with the same care as other credentials (e.g., end user passwords)",
+                  "mitigation": "Countermeasures:\no Access tokens sent as bearer tokens should not be sent in the\nclear over an insecure channel. As per the core OAuth spec,\ntransmission of access tokens must be protected using transportlayer\nmechanisms such as TLS.\no A short lifetime reduces impact in case tokens are compromised.\no The access token can be bound to a client’s identifier and require\nthe client to prove legitimate ownership of the token to the\nresource server"
+                }
+              ],
               "attrs": {
                 ".marker-target": {
-                  "class": "marker-target hasNoOpenThreats isInScope"
+                  "class": "marker-target hasOpenThreats isInScope"
                 },
                 ".connection": {
-                  "class": "connection hasNoOpenThreats isInScope"
+                  "class": "connection hasOpenThreats isInScope"
                 }
               }
             }
