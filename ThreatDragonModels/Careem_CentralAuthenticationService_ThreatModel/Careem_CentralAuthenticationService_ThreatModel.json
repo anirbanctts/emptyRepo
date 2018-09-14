@@ -2278,6 +2278,36 @@
                   "vulnerabilityRating": "8.1",
                   "description": "An attacker may try to guess valid refresh token values and send it\nusing the grant type \"refresh_token\" in order to obtain a valid\naccess token.\nImpact: Exposure of a single refresh token and derivable access\ntokens.",
                   "mitigation": "Countermeasures:\no Bind token to client id, because the attacker would guess the\nmatching client id, too.\no Authenticate the client; this adds another element that the\nattacker has to guess"
+                },
+                {
+                  "status": "Open",
+                  "severity": "High",
+                  "deinitionSource": "owasp",
+                  "title": "Resource Owner-s Password Grant: Obtaining User Passwords from Authorization Server Database",
+                  "type": "OWASP Top Ten 2017 Category A5 - Broken Access Control",
+                  "subtype": "285 - Improper Authorization",
+                  "subCategorySummary": "The software does not perform or incorrectly performs an authorization check when an actor attempts to access a resource or perform an action.",
+                  "attackPattern": "115 - Authentication Bypass",
+                  "attackPatternSummary": [
+                    "An attacker gains access to application, service, or device with the privileges of an authorized or privileged user by evading or circumventing an authentication mechanism. The attacker is therefore able to access protected data without authentication ever having taken place. This refers to an attacker gaining access equivalent to an authenticated user without ever going through an authentication procedure. This is usually the result of the attacker using an unexpected access procedure that does not go through the proper checkpoints where authentication should occur. For example, a web site might assume that all users will click through a given link in order to get to secure material and simply authenticate everyone that clicks the link. However, an attacker might be able to reach secured web content by explicitly entering the path to the content rather than clicking through the authentication link, thereby avoiding the check entirely. This attack pattern differs from other authentication attacks in that attacks of this pattern avoid authentication entirely, rather than faking authentication by exploiting flaws or by stealing credentials from legitimate users."
+                  ],
+                  "vulnerabilityRating": "8.9",
+                  "description": "An attacker may obtain valid username/password combinations from the\nauthorization server’s database by gaining access to the database or\nlaunching a SQL injection attack.\nImpact: Disclosure of all username/password combinations. The impact\nmay exceed the domain of the authorization server, since many users\ntend to use the same credentials on different services.",
+                  "mitigation": "Countermeasures:\no Enforce credential storage protection best practices"
+                },
+                {
+                  "status": "Open",
+                  "severity": "High",
+                  "deinitionSource": "other",
+                  "title": "Resource Owner-s Password Grant: Online Guessing",
+                  "type": "Attacker guess valid username-password combinations",
+                  "attackPattern": "112 - Brute Force",
+                  "attackPatternSummary": [
+                    "In this attack, some asset (information, functionality, identity, etc.) is protected by a finite secret value. The attacker attempts to gain access to this asset by using trial-and-error to exhaustively explore all the possible secret values in the hope of finding the secret (or a value that is functionally equivalent) that will unlock the asset. Examples of secrets can include, but are not limited to, passwords, encryption keys, database lookup keys, and initial values to one-way functions. The key factor in this attack is the attackers' ability to explore the possible secret space rapidly. This, in turn, is a function of the size of the secret space and the computational power the attacker is able to bring to bear on the problem. If the attacker has modest resources and the secret space is large, the challenge facing the attacker is intractable. While the defender cannot control the resources available to an attacker, they can control the size of the secret space. Creating a large secret space involves selecting one's secret from as large a field of equally likely alternative secrets as possible and ensuring that an attacker is unable to reduce the size of this field using available clues or cryptanalysis. Doing this is more difficult than it sounds since elimination of patterns (which, in turn, would provide an attacker clues that would help them reduce the space of potential secrets) is difficult to do using deterministic machines, such as computers. Assuming a finite secret space, a brute force attack will eventually succeed. The defender must rely on making sure that the time and resources necessary to do so will exceed the value of the information. For example, a secret space that will likely take hundreds of years to explore is likely safe from raw-brute force attacks."
+                  ],
+                  "vulnerabilityRating": "8.4",
+                  "description": "An attacker may try to guess valid username/password combinations\nusing the grant type \"password\".\nImpact: Revelation of a single username/password combination.",
+                  "mitigation": "Countermeasures:\no Utilize secure password policy (Section 5.1.4.2.1).\no Lock accounts\no Use tar pit\no Use CAPTCHAs\no Consider not using the grant type \"password\".\no Client authentication will provide another authentication factor and thus hinder the attack"
                 }
               ],
               "attrs": {
@@ -2706,6 +2736,22 @@
                   "description": "An attacker could try to obtain valid refresh tokens by proxying\nrequests to the authorization server. Given the assumption that the\nauthorization server URL is well-known at development time or can at\nleast be obtained from a well-known resource server, the attacker\nmust utilize some kind of spoofing in order to succeed.",
                   "mitigation": "Countermeasures:\no Utilize server authentication",
                   "vulnerabilityRating": "8.2"
+                },
+                {
+                  "status": "Open",
+                  "severity": "High",
+                  "deinitionSource": "cwe",
+                  "title": "Resource Owner-s Password Grant: Obtaining User Passwords on Transport",
+                  "type": "Authorize Actors",
+                  "subtype": "300 - Channel Accessible by Non-Endpoint ('Man-in-the-Middle')",
+                  "subCategorySummary": "The product does not adequately verify the identity of actors at both ends of a communication channel, or does not adequately ensure the integrity of the channel, in a way that allows the channel to be accessed or influenced by an actor that is not an endpoint.",
+                  "attackPattern": "651 - Eavesdropping",
+                  "attackPatternSummary": [
+                    "An adversary intercepts a form of communication (e.g. text, audio, video) by way of software (e.g., microphone and audio recording application), hardware (e.g., recording equipment), or physical means (e.g., physical proximity). The goal of eavesdropping is typically to gain unauthorized access to sensitive information about the target for financial, personal, political, or other gains. Eavesdropping is different from a sniffing attack as it does not take place on a network-based communication channel (e.g., IP traffic). Instead, it entails listening in on the raw audio source of a conversation between two or more parties."
+                  ],
+                  "description": "An attacker could attempt to eavesdrop the transmission of end-user\ncredentials with the grant type \"password\" between the client and\nserver.\nImpact: Disclosure of a single end-user’s password.",
+                  "mitigation": "Countermeasures:\no Ensure confidentiality of requests\no Use alternative authentication means that do not require the\nsending of plaintext credentials over the wire (e.g., Hash-based\nMessage Authentication Code).",
+                  "vulnerabilityRating": "8.6"
                 }
               ],
               "attrs": {
