@@ -2057,6 +2057,30 @@
                   "vulnerabilityRating": "6.8",
                   "description": "All device data and applications are copied to another device.\nApplications are used as-is on the target device.",
                   "mitigation": "Countermeasures:\no Utilize device lock to prevent unauthorized device access\no Combine refresh token request with device identification\no Refresh token rotation\no Where a user knows the device has been cloned, they can use\nrefresh token revocation"
+                },
+                {
+                  "status": "Open",
+                  "severity": "Critical",
+                  "deinitionSource": "allcwe",
+                  "title": "Client - Obtaining Access Token",
+                  "type": "All",
+                  "subtype": "922 - Insecure Storage of Sensitive Information",
+                  "subCategorySummary": "The software stores sensitive information without properly limiting read or write access by unauthorized actors.",
+                  "description": "Access tokens could be stolen\nfrom the device if the application stores them in a storage device\nthat is accessible to other applications.\nImpact: Where the token is a bearer token and no additional mechanism\nis used to identify the client, the attacker can access all resources\nassociated with the token and its scope.",
+                  "mitigation": "Countermeasures:\no Keep access tokens in transient memory and limit grants.\no Limit token scope.\no Keep access tokens in private memory or apply same protection\nmeans as for refresh tokens.\no Keep access token lifetime short.",
+                  "vulnerabilityRating": "9.5"
+                },
+                {
+                  "status": "Open",
+                  "severity": "High",
+                  "deinitionSource": "cwe",
+                  "title": "Open Redirectors on Client",
+                  "type": "Validate Inputs",
+                  "subtype": "601 - URL Redirection to Untrusted Site ('Open Redirect')",
+                  "subCategorySummary": "A web application accepts a user-controlled input that specifies a link to an external site, and uses that link in a Redirect. This simplifies phishing attacks.",
+                  "description": "An open redirector is an endpoint using a parameter to automatically\nredirect a user agent to the location specified by the parameter\nvalue without any validation. If the authorization server allows the\nclient to register only part of the redirect URI, an attacker can use\nan open redirector operated by the client to construct a redirect URI\nthat will pass the authorization server validation but will send the\nauthorization \"code\" or access token to an endpoint under the control\nof the attacker.\nImpact: An attacker could gain access to authorization \"codes\" or\naccess tokens.",
+                  "vulnerabilityRating": "8.7",
+                  "mitigation": "Countermeasures:\no Require clients to register full redirect URI"
                 }
               ],
               "attrs": {
