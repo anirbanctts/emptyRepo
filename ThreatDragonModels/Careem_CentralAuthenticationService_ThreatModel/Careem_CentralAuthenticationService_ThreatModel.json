@@ -2752,6 +2752,28 @@
                   "vulnerabilityRating": "8.5",
                   "description": "Where the token is a handle, the attacker may attempt to guess the\naccess token values based on knowledge they have from other access\ntokens.\nImpact: Access to a single user’s detail",
                   "mitigation": "Countermeasures:\no Handle tokens should have a reasonable level of entropy in order to make guessing a valid token value not feasible.\no Assertion (or self-contained token) token contents should be\nprotected by a digital signature.\no Security can be further strengthened by using a short access token\nduration"
+                },
+                {
+                  "status": "Open",
+                  "severity": "Medium",
+                  "deinitionSource": "other",
+                  "title": "Protected Resources - Abuse of Token by Legitimate Resource Server or Client",
+                  "type": "Abuse of Token by Legitimate Party",
+                  "vulnerabilityRating": "6.6",
+                  "description": "A legitimate resource server could attempt to use an access token to\naccess another resource server. Similarly, a client could try to use\na token obtained for one server on another resource server.",
+                  "mitigation": "Countermeasures:\no Tokens should be restricted to particular resource servers"
+                },
+                {
+                  "status": "Open",
+                  "severity": "High",
+                  "deinitionSource": "cwe",
+                  "title": "Protected Resources - Token Leakage via Log Files and HTTP Referrers",
+                  "type": "Audit",
+                  "subtype": "532 - Information Exposure Through Log Files",
+                  "subCategorySummary": "Information written to log files can be of a sensitive nature and give valuable guidance to an attacker or expose sensitive user information.",
+                  "vulnerabilityRating": "8.7",
+                  "description": "If access tokens are sent via URI query parameters, such tokens may\nleak to log files and the HTTP \"referer\".",
+                  "mitigation": "Countermeasures:\no Use Authorization headers or POST parameters instead of URI request parameters.\no Set logging configuration appropriately.\no Prevent unauthorized persons from access to system log files.\no Abuse of leaked access tokens can be prevented by enforcing\nauthenticated requests.\no The impact of token leakage may be reduced by limiting scope and duration and by enforcing one-time token usage"
                 }
               ],
               "attrs": {
