@@ -2103,22 +2103,52 @@
                 "height": 100
               },
               "position": {
-                "x": 494,
+                "x": 495,
                 "y": 146
               },
               "angle": 0,
               "id": "adbb6f55-4b48-4a36-87d1-7f68e4a7b915",
               "z": 3,
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
+              "threats": [
+                {
+                  "status": "Open",
+                  "severity": "High",
+                  "deinitionSource": "cwe",
+                  "title": "Authorization Endpoint - Malicious Client Obtains Existing Authorization by Fraud",
+                  "type": "Authorize Actors",
+                  "subtype": "863 - Incorrect Authorization",
+                  "subCategorySummary": "The software performs an authorization check when an actor attempts to access a resource or perform an action, but it does not correctly perform the check. This allows attackers to bypass intended access restrictions.",
+                  "attackPattern": "151 - Identity Spoofing",
+                  "attackPatternSummary": [
+                    "Identity Spoofing refers to the action of assuming (i.e., taking on) the identity of some other entity (human or non-human) and then using that identity to accomplish a goal. An adversary may craft messages that appear to come from a different principle or use stolen / spoofed authentication credentials. Alternatively, an adversary may intercept a message from a legitimate sender and attempt to make it look like the message comes from them without changing its content. The latter form of this attack can be used to hijack credentials from legitimate users. Identity Spoofing attacks need not be limited to transmitted messages - any resource that is associated with an identity (for example, a file with a signature) can be the target of an attack where the adversary attempts to change the apparent identity. This attack differs from Content Spoofing attacks where the adversary does not wish to change the apparent identity of the message but instead wishes to change what the message says. In an Identity Spoofing attack, the adversary is attempting to change the identity of the content."
+                  ],
+                  "vulnerabilityRating": "8.4",
+                  "description": "Authorization servers may wish to automatically process authorization\nrequests from clients that have been previously authorized by the\nuser. When the user is redirected to the authorization server’s enduser\nauthorization endpoint to grant access, the authorization server\ndetects that the user has already granted access to that particular\nclient. Instead of prompting the user for approval, the\nauthorization server automatically redirects the user back to the\nclient.\nA malicious client may exploit that feature and try to obtain such an\nauthorization \"code\" instead of the legitimate client.",
+                  "mitigation": "Countermeasures:\no Authorization servers should not automatically process repeat\nauthorizations to public clients unless the client is validated\nusing a pre-registered redirect URI.\no Authorization servers can mitigate the risks associated with\nautomatic processing by limiting the scope of access tokens\nobtained through automated approvals."
+                },
+                {
+                  "status": "Open",
+                  "severity": "High",
+                  "deinitionSource": "cwe",
+                  "title": "Authorization Endpoint - Open Redirector",
+                  "type": "Validate Inputs",
+                  "subtype": "601 - URL Redirection to Untrusted Site ('Open Redirect')",
+                  "subCategorySummary": "A web application accepts a user-controlled input that specifies a link to an external site, and uses that link in a Redirect. This simplifies phishing attacks.",
+                  "vulnerabilityRating": "8.7",
+                  "description": "An attacker could use the end-user authorization endpoint and the\nredirect URI parameter to abuse the authorization server as an open\nredirector. An open redirector is an endpoint using a parameter to\nautomatically redirect a user agent to the location specified by the\nparameter value without any validation.\nImpact: An attacker could utilize a user’s trust in an authorization\nserver to launch a phishing attack.",
+                  "mitigation": "Countermeasures:\no Require clients to register any full redirect URIs\no Don’t redirect to a redirect URI if the client identifier or\nredirect URI can’t be verified"
+                }
+              ],
               "attrs": {
                 ".element-shape": {
-                  "class": "element-shape hasNoOpenThreats isInScope"
+                  "class": "element-shape hasOpenThreats isInScope"
                 },
                 "text": {
                   "text": "Authorization\nServer"
                 },
                 ".element-text": {
-                  "class": "element-text hasNoOpenThreats isInScope"
+                  "class": "element-text hasOpenThreats isInScope"
                 }
               }
             },
