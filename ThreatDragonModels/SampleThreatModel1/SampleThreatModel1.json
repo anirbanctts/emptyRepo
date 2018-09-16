@@ -616,8 +616,8 @@
                   "y": 80
                 },
                 {
-                  "x": 164,
-                  "y": 127
+                  "x": 1247,
+                  "y": 169
                 },
                 {
                   "x": 113,
@@ -659,22 +659,36 @@
                 "height": 100
               },
               "position": {
-                "x": 295,
-                "y": 112
+                "x": 330,
+                "y": 21
               },
               "angle": 0,
               "id": "bfc71560-95f6-482f-9e53-18ae4b2fcbf5",
               "z": 2,
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
+              "threats": [
+                {
+                  "status": "Open",
+                  "severity": "Critical",
+                  "deinitionSource": "owasp",
+                  "title": "dasdasd",
+                  "type": "OWASP Top Ten 2017 Category A3 - Sensitive Data Exposure",
+                  "subtype": "295 - Improper Certificate Validation",
+                  "subCategorySummary": "The software does not validate, or incorrectly validates, a certificate.",
+                  "vulnerabilityRating": "9.3",
+                  "description": "asdasdas",
+                  "mitigation": "asdasdsa"
+                }
+              ],
               "attrs": {
                 ".element-shape": {
-                  "class": "element-shape hasNoOpenThreats isInScope"
+                  "class": "element-shape hasOpenThreats isInScope"
                 },
                 "text": {
                   "text": "process 1"
                 },
                 ".element-text": {
-                  "class": "element-text hasNoOpenThreats isInScope"
+                  "class": "element-text hasOpenThreats isInScope"
                 }
               }
             }
@@ -682,7 +696,7 @@
         },
         "size": {
           "height": 590,
-          "width": 790
+          "width": 1281
         }
       }
     ]
