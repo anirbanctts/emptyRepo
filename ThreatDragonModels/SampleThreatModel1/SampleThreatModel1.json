@@ -641,13 +641,31 @@
                 }
               ],
               "z": 1,
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
+              "threats": [
+                {
+                  "status": "Open",
+                  "severity": "Medium",
+                  "deinitionSource": "owasp",
+                  "title": "dasdasdas",
+                  "type": "OWASP Top Ten 2017 Category A3 - Sensitive Data Exposure",
+                  "subtype": "311 - Missing Encryption of Sensitive Data",
+                  "subCategorySummary": "The software does not encrypt sensitive or critical information before storage or transmission.",
+                  "attackPattern": "102 - Session Sidejacking",
+                  "attackPatternSummary": [
+                    "Session sidejacking takes advantage of an unencrypted communication channel between a victim and target system. The attacker sniffs traffic on a network looking for session tokens in unencrypted traffic. Once a session token is captured, the attacker performs malicious actions by using the stolen token with the targeted application to impersonate the victim. This attack is a specific method of session hijacking, which is exploiting a valid session token to gain unauthorized access to a target system or information. Other methods to perform a session hijacking are session fixation, cross-site scripting, or compromising a user or server machine and stealing the session token."
+                  ],
+                  "vulnerabilityRating": "4.9",
+                  "description": "asdasd",
+                  "mitigation": "asda"
+                }
+              ],
               "attrs": {
                 ".marker-target": {
-                  "class": "marker-target hasNoOpenThreats isInScope"
+                  "class": "marker-target hasOpenThreats isInScope"
                 },
                 ".connection": {
-                  "class": "connection hasNoOpenThreats isInScope"
+                  "class": "connection hasOpenThreats isInScope"
                 }
               }
             },
