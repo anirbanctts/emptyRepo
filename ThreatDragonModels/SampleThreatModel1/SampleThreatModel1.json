@@ -612,16 +612,8 @@
               },
               "vertices": [
                 {
-                  "x": 80,
-                  "y": 80
-                },
-                {
-                  "x": 1247,
-                  "y": 169
-                },
-                {
-                  "x": 113,
-                  "y": 106
+                  "x": 64,
+                  "y": 115
                 },
                 {
                   "x": 234,
@@ -631,7 +623,10 @@
               "id": "53546119-1415-433b-ac28-9549ff0af20e",
               "labels": [
                 {
-                  "position": 0.5,
+                  "position": {
+                    "distance": 0.46108049453106703,
+                    "offset": -89.5521094398573
+                  },
                   "attrs": {
                     "text": {
                       "text": "flow 0",
@@ -671,7 +666,7 @@
                   "status": "Open",
                   "severity": "Critical",
                   "deinitionSource": "owasp",
-                  "title": "dasdasd",
+                  "title": "dasdasdaaaaaaaaaaa",
                   "type": "OWASP Top Ten 2017 Category A3 - Sensitive Data Exposure",
                   "subtype": "295 - Improper Certificate Validation",
                   "subCategorySummary": "The software does not validate, or incorrectly validates, a certificate.",
@@ -689,6 +684,32 @@
                 },
                 ".element-text": {
                   "class": "element-text hasOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Store",
+              "size": {
+                "width": 160,
+                "height": 80
+              },
+              "position": {
+                "x": 459,
+                "y": 24
+              },
+              "angle": 0,
+              "id": "a387bb9b-a945-4377-b86f-56b315b47d1a",
+              "z": 3,
+              "hasOpenThreats": false,
+              "attrs": {
+                ".element-shape": {
+                  "class": "element-shape hasNoOpenThreats isInScope"
+                },
+                "text": {
+                  "text": "store 2"
+                },
+                ".element-text": {
+                  "class": "element-text hasNoOpenThreats isInScope"
                 }
               }
             }
