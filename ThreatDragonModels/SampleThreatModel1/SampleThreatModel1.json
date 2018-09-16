@@ -670,7 +670,7 @@
                   "status": "Open",
                   "severity": "Critical",
                   "deinitionSource": "owasp",
-                  "title": "dasdasdaaaaaaaaaaa",
+                  "title": "dasdasdaaaaaaaaaaa1",
                   "type": "OWASP Top Ten 2017 Category A3 - Sensitive Data Exposure",
                   "subtype": "295 - Improper Certificate Validation",
                   "subCategorySummary": "The software does not validate, or incorrectly validates, a certificate.",
