@@ -189,7 +189,7 @@
                   "status": "Open",
                   "severity": "Critical",
                   "deinitionSource": "allcwe",
-                  "title": "End-User Credentials Phished Using Compromised or Embedded Browser",
+                  "title": "Web-based-login: At Browser: End-User Credentials Phished Using Compromised or Embedded Browser",
                   "type": "All",
                   "subtype": "451 - User Interface (UI) Misrepresentation of Critical Information",
                   "subCategorySummary": "The user interface (UI) does not properly represent critical information to the user, allowing the information - or its source - to be obscured or spoofed. This is often a component in phishing attacks.",
@@ -203,7 +203,7 @@
                   "deinitionSource": "cwe",
                   "description": "An open redirector is an endpoint using a parameter to automatically\nredirect a user agent to the location specified by the parameter\nvalue without any validation. If the authorization server allows the\nclient to register only part of the redirect URI, an attacker can use\nan open redirector operated by the client to construct a redirect URI\nthat will pass the authorization server validation but will send the\nauthorization \"code\" or access token to an endpoint under the control\nof the attacker.\nImpact: An attacker could gain access to authorization \"codes\" or\naccess tokens.",
                   "mitigation": "Countermeasures:\no Require clients to register full redirect URI",
-                  "title": "Open Redirectors on Client",
+                  "title": "Web-based-login: At Browser: Open Redirectors on Client",
                   "type": "Validate Inputs",
                   "subtype": "601 - URL Redirection to Untrusted Site ('Open Redirect')",
                   "subCategorySummary": "A web application accepts a user-controlled input that specifies a link to an external site, and uses that link in a Redirect. This simplifies phishing attacks.",
@@ -213,7 +213,7 @@
                   "status": "Open",
                   "severity": "High",
                   "deinitionSource": "allcwe",
-                  "title": "Clickjacking Attack against Authorization",
+                  "title": "Web-based-login: At Browser: Clickjacking Attack against Authorization",
                   "mitigation": "Countermeasures:\no For newer browsers, avoidance of iFrames during authorization can be enforced on the server side by using the X-FRAME-OPTIONS header.\no For older browsers, JavaScript frame-busting techniques can be used but may not be effective in all browsers",
                   "description": "With clickjacking, a malicious site loads the target site in a\ntransparent iFrame overlaid on top of a set of dummy\nbuttons that are carefully constructed to be placed directly under\nimportant buttons on the target site. When a user clicks a visible\nbutton, they are actually clicking a button (such as an \"Authorize\"\nbutton) on the hidden page.\nImpact: An attacker can steal a user’s authentication credentials and\naccess their resources.",
                   "vulnerabilityRating": "8.3",
@@ -231,7 +231,7 @@
                   "class": "element-shape hasOpenThreats isInScope"
                 },
                 "text": {
-                  "text": "Browser1"
+                  "text": "Browser"
                 },
                 ".element-text": {
                   "class": "element-text hasOpenThreats isInScope"
