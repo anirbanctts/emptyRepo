@@ -1959,8 +1959,8 @@
                 "height": 80
               },
               "position": {
-                "x": 213,
-                "y": 19
+                "x": 35,
+                "y": 490
               },
               "angle": 0,
               "id": "597e98f1-00e2-478c-9aac-bce10d4e061a",
@@ -2630,7 +2630,12 @@
               "target": {
                 "id": "72e504d3-7374-4488-a70d-dfa20fc27edc"
               },
-              "vertices": [],
+              "vertices": [
+                {
+                  "x": 70,
+                  "y": 418
+                }
+              ],
               "id": "e2f8309b-8ab2-4990-9cd9-b117baecca0c",
               "labels": [
                 {
@@ -2813,8 +2818,8 @@
                 "height": 100
               },
               "position": {
-                "x": 639,
-                "y": 329
+                "x": 290,
+                "y": 30
               },
               "angle": 0,
               "id": "e7130819-d883-48be-954b-10c66b6ad08b",
@@ -2893,8 +2898,8 @@
               },
               "vertices": [
                 {
-                  "x": 648,
-                  "y": 269
+                  "x": 511,
+                  "y": 65
                 }
               ],
               "id": "c3ee134b-cc6e-46be-a03b-12349e7d0dbb",
@@ -2930,12 +2935,7 @@
               "target": {
                 "id": "adbb6f55-4b48-4a36-87d1-7f68e4a7b915"
               },
-              "vertices": [
-                {
-                  "x": 587,
-                  "y": 301
-                }
-              ],
+              "vertices": [],
               "id": "e2442a8d-4fef-4d87-a390-b815b386737f",
               "labels": [
                 {
@@ -2971,12 +2971,8 @@
               },
               "vertices": [
                 {
-                  "x": 264,
-                  "y": 556
-                },
-                {
-                  "x": 522,
-                  "y": 561
+                  "x": 190,
+                  "y": 144
                 }
               ],
               "id": "1e4e0b0f-b05a-4b68-8a8e-702bad02bc14",
@@ -3036,11 +3032,57 @@
                   "class": "connection hasOpenThreats isInScope"
                 }
               }
+            },
+            {
+              "type": "tm.Boundary",
+              "smooth": true,
+              "source": {
+                "x": 235,
+                "y": 30
+              },
+              "target": {
+                "x": 482,
+                "y": 15
+              },
+              "vertices": [
+                {
+                  "x": 321,
+                  "y": 162
+                }
+              ],
+              "id": "fbbaa33f-53d7-4892-b0d6-575ec4a1ed94",
+              "z": 20,
+              "attrs": {}
+            },
+            {
+              "type": "tm.Boundary",
+              "smooth": true,
+              "source": {
+                "x": 3,
+                "y": 331
+              },
+              "target": {
+                "x": 108,
+                "y": 155
+              },
+              "vertices": [
+                {
+                  "x": 95,
+                  "y": 379
+                },
+                {
+                  "x": 186,
+                  "y": 341
+                }
+              ],
+              "id": "bb0ee18e-497b-4ecd-b063-b663cc1da1a9",
+              "z": 21,
+              "attrs": {}
             }
           ]
         },
         "size": {
-          "height": 685,
+          "height": 1527.4678955078125,
           "width": 1092
         }
       }
