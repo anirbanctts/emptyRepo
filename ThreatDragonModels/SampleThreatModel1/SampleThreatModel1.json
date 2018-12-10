@@ -33,7 +33,7 @@
                   "severity": "Medium",
                   "title": "sample threat title-1",
                   "type": "OWASP Top Ten 2017 Category A3 - Sensitive Data Exposure",
-                  "subtype": "Missing Encryption of Sensitive Data",
+                  "subtype": "295 - Improper Certificate Validation",
                   "description": "sample desc",
                   "mitigation": "sample mitigation",
                   "subCategorySummary": "The software does not encrypt sensitive or critical information before storage or transmission.",
